@@ -182,12 +182,6 @@ namespace MiniJamAirPlanes
             ColosionRect.X = (int)Location.X;
             ColosionRect.Y = (int)Location.Y;
 
-            if (ColosionRect.Intersects(PlayerCollsionRect))
-            {
-                Trace.WriteLine("Poosible Collossion");
-                destroyed = true;
-            }
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
