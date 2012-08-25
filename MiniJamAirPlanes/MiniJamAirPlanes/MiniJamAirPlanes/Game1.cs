@@ -19,6 +19,9 @@ namespace MiniJamAirPlanes
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        public static int WindowWidth = 800;
+        public static int WindowHeight = 640;
+
         int FramesThisPeroid = 0;
         int FPS = 0;
         TimeSpan ElapsedTime = TimeSpan.Zero;
@@ -44,8 +47,8 @@ namespace MiniJamAirPlanes
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 640;
+            graphics.PreferredBackBufferWidth = WindowWidth;
+            graphics.PreferredBackBufferHeight = WindowHeight;
             //graphics.ToggleFullScreen();
             graphics.ApplyChanges();
 
