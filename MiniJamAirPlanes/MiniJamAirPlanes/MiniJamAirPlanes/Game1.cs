@@ -31,7 +31,7 @@ namespace MiniJamAirPlanes
         Texture2D EnemyTexture;
         Texture2D BulletTexture;
         BaseEnemy testEnemy;
-        private List<BaseEnemy> enemyArray = new List<BaseEnemy>();
+        public List<BaseEnemy> enemyArray = new List<BaseEnemy>();
         public static BulletManager bManager;
         Random aRandom = new Random();
         public Game1()
@@ -101,10 +101,10 @@ namespace MiniJamAirPlanes
 
             foreach (BaseEnemy aEnemy in enemyArray)
             {
-                aEnemy.Update(gameTime);
+                aEnemy.Update(gameTime, thePlayer.GetCollosionRect);
             }
 
-            bManager.Update(gameTime);
+            bManager.Update(gameTime, enemyArray);
 
 
             //FPS stuff
@@ -116,7 +116,12 @@ namespace MiniJamAirPlanes
                 Window.Title = FPS.ToString();
                 FramesThisPeroid = 0;
             }
-                
+
+            for (int i = enemyArray.Count - 1; i >= 0; i--)
+            {
+                if (enemyArray[i].destroyed == true)
+                    enemyArray.RemoveAt(i);
+            }
 
             base.Update(gameTime);
         }

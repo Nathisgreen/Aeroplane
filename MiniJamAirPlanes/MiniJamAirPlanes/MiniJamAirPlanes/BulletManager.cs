@@ -18,11 +18,20 @@ namespace MiniJamAirPlanes
             BulletTexture = texture;
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, List<BaseEnemy> enemies)
         {
             foreach (Bullet thebullet in bullets)
             {
-                thebullet.Update(gameTime);
+                thebullet.Update(gameTime, enemies);
+            }
+
+            if (bullets.Count > 0)
+            {
+                for (int i = bullets.Count-1; i >= 0; i--)
+                {
+                    if (bullets[i].destroyed == true)
+                        bullets.RemoveAt(i);
+                }
             }
         }
 

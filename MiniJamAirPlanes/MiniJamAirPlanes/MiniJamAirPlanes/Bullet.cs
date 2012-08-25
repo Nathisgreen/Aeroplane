@@ -12,7 +12,9 @@ namespace MiniJamAirPlanes
         Vector2 Location;
         Vector2 Velocity;
         Texture2D Sprite;
-        bool FiredByPLayer;
+        public bool FiredByPLayer;
+        Rectangle CollosionRect;
+        public bool destroyed = false;
         
 
         public Bullet(Vector2 location, Vector2 velocity, Texture2D texture, bool whofired)
@@ -21,11 +23,25 @@ namespace MiniJamAirPlanes
             this.Velocity = velocity;
             this.Sprite = texture;
             this.FiredByPLayer = whofired;
+            CollosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, Sprite.Width, Sprite.Height);
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, List<BaseEnemy> enemies)
         {
             Location += Velocity;
+            CollosionRect.X = (int)Location.X;
+            CollosionRect.Y = (int)Location.Y;
+
+            foreach( BaseEnemy enemy in enemies)
+            {
+                if (CollosionRect.Intersects(enemy.ColosionRect))
+                {
+                    enemy.destroyed = true;
+                    destroyed = true;
+
+                }
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
