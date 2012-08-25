@@ -29,8 +29,10 @@ namespace MiniJamAirPlanes
         Player thePlayer;
         Texture2D PlayerTexture;
         Texture2D EnemyTexture;
+        Texture2D BulletTexture;
         BaseEnemy testEnemy;
         private List<BaseEnemy> enemyArray = new List<BaseEnemy>();
+        public static BulletManager bManager;
         Random aRandom = new Random();
         public Game1()
         {
@@ -67,8 +69,9 @@ namespace MiniJamAirPlanes
             // TODO: use this.Content to load your game content here
             PlayerTexture = Content.Load<Texture2D>(@"sprPlayer");
             EnemyTexture = Content.Load<Texture2D>(@"sprEnemyBase");
+            BulletTexture = Content.Load < Texture2D>(@"Bullet");
 
-            SetupGameObjects(PlayerTexture);
+            SetupGameObjects(PlayerTexture, BulletTexture);
         }
 
         /// <summary>
@@ -100,6 +103,9 @@ namespace MiniJamAirPlanes
             {
                 aEnemy.Update(gameTime);
             }
+
+            bManager.Update(gameTime);
+
 
             //FPS stuff
             ElapsedTime += gameTime.ElapsedGameTime;
@@ -134,16 +140,24 @@ namespace MiniJamAirPlanes
                 aEnemy.Draw(spriteBatch);
             }
 
+            bManager.Draw(spriteBatch);
+
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
 
-        public void SetupGameObjects(Texture2D playertexture)
+        public void SetupGameObjects(Texture2D playertexture, Texture2D bullettexture)
         {
             thePlayer = new Player(new Vector2(100, 320), playertexture);
 
+<<<<<<< HEAD
             /*for (int i = 0; i < 1; i++)
+=======
+            bManager = new BulletManager(bullettexture);
+
+            for (int i = 0; i < 10; i++)
+>>>>>>> origin/master
             {
                 enemyArray.Add(new BaseEnemy(new Vector2(800, 200), EnemyTexture,2));
             }*/
