@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics;
 
 namespace MiniJamAirPlanes
 {
@@ -31,6 +32,17 @@ namespace MiniJamAirPlanes
             Location += Velocity;
             CollosionRect.X = (int)Location.X;
             CollosionRect.Y = (int)Location.Y;
+
+            if (Location.X > Game1.WindowWidth)
+            {
+                Trace.WriteLine("Off screen being destroyed");
+                destroyed = true;
+            }
+            if( Location.X < 0 )
+            {
+                Trace.WriteLine("Off screen being destroyed");
+                destroyed = true;
+            }
 
             foreach( BaseEnemy enemy in enemies)
             {

@@ -20,6 +20,11 @@ namespace MiniJamAirPlanes
         float ShotDelay = 0.25f;
         float LastShot = 0.0f;
         Rectangle CollosionRect;
+        bool HasShield = false;
+        bool Dead = false;
+        bool Hit = false;
+        float HitTime = 0.0f;
+        float HitTimer = 0.5f;
 
 
         public Player( Vector2 location, Texture2D  sprite)
@@ -39,59 +44,92 @@ namespace MiniJamAirPlanes
             get { return CollosionRect; }
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, List<BaseEnemy> enemies)
         {
-            HandleInput(gameTime);
-
-            // Limit Speed
-            if (MovementVector.X > MaxVelocity)
-                MovementVector.X = MaxVelocity;
-            if (MovementVector.X < -MaxVelocity)
-                MovementVector.X = -MaxVelocity;
-            if (MovementVector.Y > MaxVelocity)
-                MovementVector.Y = MaxVelocity;
-            if (MovementVector.Y < -MaxVelocity)
-                MovementVector.Y = -MaxVelocity;
-
-            // move
-            Location += MovementVector;
-
-            // Limit to screen
-            if (Location.X < 0)
-                Location.X = 0;
-            if (Location.Y < 0)
-                Location.Y = 0;
-            if (Location.X > Game1.WindowWidth - Sprite.Width)
-                Location.X = Game1.WindowWidth - Sprite.Width;
-            if (Location.Y > Game1.WindowHeight - Sprite.Height)
-                Location.Y = Game1.WindowHeight - Sprite.Height;
-
-            // keep collosion rect in sync
-            CollosionRect.X = (int)Location.X;
-            CollosionRect.Y = (int)Location.Y;
-
-            //apply friction
-            if (MovementVector.X > 0)
-                MovementVector.X -= Friction;
-            if (MovementVector.Y > 0)
-                MovementVector.Y -= Friction;
-            if (MovementVector.X < 0)
-                MovementVector.X += Friction;
-            if (MovementVector.Y < 0)
-                MovementVector.Y += Friction;
-
-            if (CanFire == false)
+            if (Dead == false)
             {
-                LastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                if (LastShot > ShotDelay)
-                    CanFire = true;
+                HandleInput(gameTime);
+
+                // Limit Speed
+                if (MovementVector.X > MaxVelocity)
+                    MovementVector.X = MaxVelocity;
+                if (MovementVector.X < -MaxVelocity)
+                    MovementVector.X = -MaxVelocity;
+                if (MovementVector.Y > MaxVelocity)
+                    MovementVector.Y = MaxVelocity;
+                if (MovementVector.Y < -MaxVelocity)
+                    MovementVector.Y = -MaxVelocity;
+
+                // move
+                Location += MovementVector;
+
+                // Limit to screen
+                if (Location.X < 0)
+                    Location.X = 0;
+                if (Location.Y < 0)
+                    Location.Y = 0;
+                if (Location.X > Game1.WindowWidth - Sprite.Width)
+                    Location.X = Game1.WindowWidth - Sprite.Width;
+                if (Location.Y > Game1.WindowHeight - Sprite.Height)
+                    Location.Y = Game1.WindowHeight - Sprite.Height;
+
+                // keep collosion rect in sync
+                CollosionRect.X = (int)Location.X;
+                CollosionRect.Y = (int)Location.Y;
+
+                //apply friction
+                if (MovementVector.X > 0)
+                    MovementVector.X -= Friction;
+                if (MovementVector.Y > 0)
+                    MovementVector.Y -= Friction;
+                if (MovementVector.X < 0)
+                    MovementVector.X += Friction;
+                if (MovementVector.Y < 0)
+                    MovementVector.Y += Friction;
+
+                foreach (BaseEnemy enemy in enemies)
+                {
+                    if (Hit == false)
+                    {
+                        if (CollosionRect.Intersects(enemy.ColosionRect))
+                        {
+                            enemy.destroyed = true;
+                            Hit = true;
+                            HitTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                        }
+                    }
+                }
+
+                if (CanFire == false)
+                {
+                    LastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (LastShot > ShotDelay)
+                        CanFire = true;
+                }
+
+                if (Hit == true)
+                {
+                    HitTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (HitTime > HitTimer)
+                        Hit = false;
+                }
             }
                 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Location, Color.White);
+            if (Dead == false)
+            {
+                if (Hit)
+                {
+                }
+                else
+                {
+                    spriteBatch.Draw(Sprite, Location, Color.White);
+                }
+            }
         }
 
         public void HandleInput(GameTime gameTime)
@@ -120,10 +158,15 @@ namespace MiniJamAirPlanes
             {
                 if (CanFire == true)
                 {
-                    Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 16), new Vector2(5, 0), true);
+                    Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 16), new Vector2(6, 0), true);
                     CanFire = false;
                     LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
                 }
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                
             }
 
         }

@@ -107,7 +107,7 @@ namespace MiniJamAirPlanes
 
             time++;
         
-            thePlayer.Update(gameTime);
+            thePlayer.Update(gameTime, enemyArray);
 
             for (int i = 0; i < enemyArray.Count; i++ )
             {
