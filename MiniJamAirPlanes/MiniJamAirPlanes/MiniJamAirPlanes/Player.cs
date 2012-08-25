@@ -14,6 +14,8 @@ namespace MiniJamAirPlanes
         Texture2D Sprite;
         Vector2 MovementVector = new Vector2(0, 0);
         int MaxVelocity = 10;
+        float VelocityChangePerStep = (float)1.0;
+        float Friction = (float)0.5;
 
         public Player( Vector2 location, Texture2D  sprite)
         {
@@ -25,6 +27,7 @@ namespace MiniJamAirPlanes
         {
             HandleInput();
 
+            // Limit Speed
             if (MovementVector.X > MaxVelocity)
                 MovementVector.X = MaxVelocity;
             if (MovementVector.X < -MaxVelocity)
@@ -34,17 +37,28 @@ namespace MiniJamAirPlanes
             if (MovementVector.Y < -MaxVelocity)
                 MovementVector.Y = -MaxVelocity;
 
+            // move
             Location += MovementVector;
-            
+
+            // Limit to screen
+            if (Location.X < 0)
+                Location.X = 0;
+            if (Location.Y < 0)
+                Location.Y = 0;
+            if (Location.X > Game1.WindowWidth - Sprite.Width)
+                Location.X = Game1.WindowWidth - Sprite.Width;
+            if (Location.Y > Game1.WindowHeight - Sprite.Height)
+                Location.Y = Game1.WindowHeight - Sprite.Height;
+
             //apply friction
             if (MovementVector.X > 0)
-                MovementVector.X -= (float)0.5;
+                MovementVector.X -= Friction;
             if (MovementVector.Y > 0)
-                MovementVector.Y--;
+                MovementVector.Y -= Friction;
             if (MovementVector.X < 0)
-                MovementVector.X++;
+                MovementVector.X += Friction;
             if (MovementVector.Y < 0)
-                MovementVector.Y++;
+                MovementVector.Y += Friction;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -54,24 +68,24 @@ namespace MiniJamAirPlanes
 
         public void HandleInput()
         {
-            if(Keyboard.GetState().IsKeyDown(Keys.W))
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
-                MovementVector.Y -= 5;
+                MovementVector.Y -= VelocityChangePerStep;
             }
 
-            if(Keyboard.GetState().IsKeyDown(Keys.A))
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                MovementVector.X -= 5;
+                MovementVector.X -= VelocityChangePerStep;
             }
 
-            if(Keyboard.GetState().IsKeyDown(Keys.S))
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-                MovementVector.Y += 5;
+                MovementVector.Y += VelocityChangePerStep;
             }
 
-            if(Keyboard.GetState().IsKeyDown(Keys.D))
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                MovementVector.X += 1;
+                MovementVector.X += VelocityChangePerStep;
             }
 
         }

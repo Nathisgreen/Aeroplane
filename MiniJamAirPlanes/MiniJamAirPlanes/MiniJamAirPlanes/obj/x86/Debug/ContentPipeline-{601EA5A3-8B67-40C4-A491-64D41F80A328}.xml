@@ -7,8 +7,26 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
-      <Time>2012-08-25T11:32:07.5863761+01:00</Time>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
+      <Time>2012-08-25T12:42:43.3193761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprPlayer.png</Source>
+      <Name>sprPlayer</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb</Output>
+      <Time>2012-08-25T12:42:43.3333761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprEnemyBase.png</Source>
+      <Name>sprEnemyBase</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb</Output>
+      <Time>2012-08-25T12:42:43.3323761+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -17,10 +35,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\</RootDirectory>
-      <LoggerRootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\</RootDirectory>
+      <LoggerRootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
