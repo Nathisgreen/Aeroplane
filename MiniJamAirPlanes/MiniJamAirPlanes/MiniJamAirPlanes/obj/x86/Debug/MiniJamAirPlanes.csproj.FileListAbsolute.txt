@@ -1,0 +1,7 @@
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\MiniJamAirPlanes.exe
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\MiniJamAirPlanes.pdb
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\MiniJamAirPlanes.exe
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\MiniJamAirPlanes.pdb
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb
