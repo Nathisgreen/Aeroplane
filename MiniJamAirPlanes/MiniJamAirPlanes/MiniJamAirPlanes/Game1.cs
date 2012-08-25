@@ -25,7 +25,10 @@ namespace MiniJamAirPlanes
 
         Player thePlayer;
         Texture2D PlayerTexture;
-
+        Texture2D EnemyTexture;
+        BaseEnemy testEnemy;
+        private List<BaseEnemy> enemyArray = new List<BaseEnemy>();
+        Random aRandom = new Random();
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -60,6 +63,7 @@ namespace MiniJamAirPlanes
 
             // TODO: use this.Content to load your game content here
             PlayerTexture = Content.Load<Texture2D>(@"sprPlayer");
+            EnemyTexture = Content.Load<Texture2D>(@"sprEnemyBase");
 
             SetupGameObjects(PlayerTexture);
         }
@@ -89,6 +93,11 @@ namespace MiniJamAirPlanes
 
             thePlayer.Update(gameTime);
 
+            foreach (BaseEnemy aEnemy in enemyArray)
+            {
+                aEnemy.Update(gameTime);
+            }
+
             //FPS stuff
             ElapsedTime += gameTime.ElapsedGameTime;
             if (ElapsedTime > TimeSpan.FromSeconds(0.11))
@@ -117,6 +126,11 @@ namespace MiniJamAirPlanes
 
             thePlayer.Draw(spriteBatch);
 
+            foreach(BaseEnemy aEnemy in enemyArray)
+            {
+                aEnemy.Draw(spriteBatch);
+            }
+
             spriteBatch.End();
 
             base.Draw(gameTime);
@@ -125,6 +139,11 @@ namespace MiniJamAirPlanes
         public void SetupGameObjects(Texture2D playertexture)
         {
             thePlayer = new Player(new Vector2(100, 320), playertexture);
+
+            for (int i = 0; i < 10; i++)
+            {
+                enemyArray.Add(new BaseEnemy(new Vector2(aRandom.Next(800), aRandom.Next(600)), EnemyTexture,aRandom.Next(2)));
+            }
         }
     }
 }
