@@ -37,6 +37,69 @@
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\Bullet.xnb</Output>
       <Time>2012-08-25T14:53:35.5113761+01:00</Time>
     </Item>
+    <Item>
+      <Source>bgWaterFront.png</Source>
+      <Name>bgWaterFront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterFront.xnb</Output>
+      <Time>2012-08-25T16:38:33.3533761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bgWaterBack.png</Source>
+      <Name>bgWaterBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterBack.xnb</Output>
+      <Time>2012-08-25T16:38:33.3533761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>bgWaterMiddle.png</Source>
+      <Name>bgWaterMiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb</Output>
+      <Time>2012-08-25T16:38:33.3543761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprBullet.png</Source>
+      <Name>sprBullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprBullet.xnb</Output>
+      <Time>2012-08-25T16:38:33.3603761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprPowerUp.png</Source>
+      <Name>sprPowerUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPowerUp.xnb</Output>
+      <Time>2012-08-25T16:38:33.3613761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprHudBox.png</Source>
+      <Name>sprHudBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBox.xnb</Output>
+      <Time>2012-08-25T16:38:33.3603761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprHudBoxSelected.png</Source>
+      <Name>sprHudBoxSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb</Output>
+      <Time>2012-08-25T16:38:33.3613761+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{601EA5A3-8B67-40C4-A491-64D41F80A328}</ContentProjectGUID>

@@ -51,7 +51,7 @@ namespace MiniJamAirPlanes
         public static BulletManager bManager;
         Random aRandom = new Random();
 
-        int powerLevel = 0;
+        int powerLevel = -1;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -121,7 +121,7 @@ namespace MiniJamAirPlanes
 
             time++;
         
-            thePlayer.Update(gameTime, enemyArray);
+            thePlayer.Update(gameTime, enemyArray, powerList);
 
             for (int i = 0; i < enemyArray.Count; i++ )
             {
@@ -144,6 +144,8 @@ namespace MiniJamAirPlanes
             bManager.Update(gameTime, enemyArray);
 
 
+            powerLevel = thePlayer.PowerupsCollected -1;
+
             //FPS stuff
             ElapsedTime += gameTime.ElapsedGameTime;
             if (ElapsedTime > TimeSpan.FromSeconds(0.11))
@@ -158,6 +160,17 @@ namespace MiniJamAirPlanes
             {
                 if (enemyArray[i].destroyed == true)
                     enemyArray.RemoveAt(i);
+            }
+
+            if (powerList.Count > 0)
+            {
+                for (int i = powerList.Count - 1; i >= 0; i--)
+                {
+                    if (powerList[i].Collected == true)
+                    {
+                        powerList.RemoveAt(i);
+                    }
+                }
             }
 
             base.Update(gameTime);
