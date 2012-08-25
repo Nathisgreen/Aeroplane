@@ -142,7 +142,7 @@ namespace MiniJamAirPlanes
 
             for (int i = 0; i < 10; i++)
             {
-                enemyArray.Add(new BaseEnemy(new Vector2(aRandom.Next(800), aRandom.Next(600)), EnemyTexture,aRandom.Next(2)));
+                enemyArray.Add(new BaseEnemy(new Vector2(aRandom.Next(800), aRandom.Next(600)), EnemyTexture,2));
             }
         }
     }

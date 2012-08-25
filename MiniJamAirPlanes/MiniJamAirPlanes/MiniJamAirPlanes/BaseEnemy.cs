@@ -16,8 +16,11 @@ namespace MiniJamAirPlanes
         int MaxVelocity = 10;
         private int movementPattern;
 
-        private Boolean dir = false;
+        private Boolean dir = true;
         private int changeTime = 0;
+
+        private List<Vector2> wayPoints = new List<Vector2>();
+        private int wayPointCount = 0;
 
         public BaseEnemy(Vector2 location, Texture2D sprite, int movementPattern)
         {
@@ -25,11 +28,17 @@ namespace MiniJamAirPlanes
             this.Sprite = sprite;
             this.Velocity.X = -5;
             this.movementPattern = movementPattern;
+
+            if (movementPattern == 2)
+            {
+                wayPoints.Add(new Vector2(500, 500));
+                wayPoints.Add(new Vector2(500,  200));
+                wayPoints.Add(new Vector2(700, 200));
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-            Location += Velocity;
 
             if (Location.X < -100)
             {
@@ -50,19 +59,58 @@ namespace MiniJamAirPlanes
 
                 if (dir)
                 {
-                    if (Velocity.Y < 1)
+                    if (Velocity.Y < 3)
                     {
                         Velocity.Y += 0.1f;
                     }
                 }
                 else
                 {
-                    if (Velocity.Y > -1)
+                    if (Velocity.Y > -3)
                     {
                         Velocity.Y -= 0.1f;
                     }
                 }
             }
+
+            if (movementPattern == 2)
+            {
+                if (MathHelper.Distance(Location.X,wayPoints[wayPointCount].X) < 1)
+               // if (Math.Abs(Location.X - wayPoints[wayPointCount].X) > 50)
+                {
+                    if (Location.X > wayPoints[wayPointCount].X)
+                    {
+                        Location.X -= 5;
+                    }
+                    else
+                    {
+                        Location.X += 5;
+                    }
+                }
+
+                if (MathHelper.Distance(Location.Y, wayPoints[wayPointCount].Y) < 1)
+                {
+                    if (Location.Y > wayPoints[wayPointCount].Y)
+                    {
+                        Location.Y -= 5;
+                    }
+                    else
+                    {
+                        Location.Y += 5;
+                    }
+                }
+
+                if ((MathHelper.Distance(Location.X,wayPoints[wayPointCount].X) < 1) && (MathHelper.Distance(Location.Y, wayPoints[wayPointCount].Y) < 1))
+                {
+                    if (wayPointCount < wayPoints.Count)
+                    {
+                        wayPointCount++;
+                    }
+                }
+
+            }
+
+            Location += Velocity;
 
         }
 
