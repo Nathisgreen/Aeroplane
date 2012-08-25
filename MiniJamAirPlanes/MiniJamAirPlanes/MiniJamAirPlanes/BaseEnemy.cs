@@ -26,14 +26,13 @@ namespace MiniJamAirPlanes
         private bool yDone = false;
         private bool patternDone = false;
 
-<<<<<<< HEAD
+
         private bool usePattern = false;
         private int patternSpeed = 3;
         private Vector2 finishVelocity = new Vector2(-3, 0);
-=======
+
         public Rectangle ColosionRect;
         public bool destroyed = false;
->>>>>>> origin/master
 
         public BaseEnemy(Vector2 location, Texture2D sprite, int movementPattern)
         {
@@ -61,7 +60,15 @@ namespace MiniJamAirPlanes
                 wayPoints.Add(new Vector2(490, 320));
                 usePattern = true;
             }
-<<<<<<< HEAD
+
+            if (movementPattern == 5)
+            {
+                wayPoints.Add(new Vector2(420, 320));
+                wayPoints.Add(new Vector2(490, 250));
+                wayPoints.Add(new Vector2(420, 280));
+                wayPoints.Add(new Vector2(350, 320));
+                usePattern = true;
+            }
 
             if (movementPattern == 6)
             {
@@ -79,25 +86,11 @@ namespace MiniJamAirPlanes
                 wayPoints.Add(new Vector2(320, 220));
                 wayPoints.Add(new Vector2(520, 420));
             }
-=======
 
             ColosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, sprite.Width, sprite.Height);
         }
 
         public void Update(GameTime gameTime, Rectangle PlayerCollsionRect)
-        {
->>>>>>> origin/master
-
-            if (movementPattern == 5)
-            {
-                usePattern = true;
-                this.Velocity.X = -3;
-                wayPoints.Add(new Vector2(320, 420));
-                wayPoints.Add(new Vector2(520, 220));
-            }
-        }
-
-        public void Update(GameTime gameTime)
         {
             if (movementPattern == 1)
             {
