@@ -25,6 +25,7 @@ namespace MiniJamAirPlanes
         bool Hit = false;
         float HitTime = 0.0f;
         float HitTimer = 0.5f;
+        public int PowerupsCollected = 0;
 
 
         public Player( Vector2 location, Texture2D  sprite)
@@ -44,7 +45,7 @@ namespace MiniJamAirPlanes
             get { return CollosionRect; }
         }
 
-        public void Update(GameTime gameTime, List<BaseEnemy> enemies)
+        public void Update(GameTime gameTime, List<BaseEnemy> enemies, List<PowerUpgrade> powerups)
         {
             if (Dead == false)
             {
@@ -99,6 +100,15 @@ namespace MiniJamAirPlanes
                             HitTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                         }
+                    }
+                }
+
+                foreach (PowerUpgrade powup in powerups)
+                {
+                    if (CollosionRect.Intersects(powup.CollosionRect))
+                    {
+                        powup.Collected = true;
+                        PowerupsCollected++;
                     }
                 }
 
@@ -167,7 +177,11 @@ namespace MiniJamAirPlanes
 
             if (Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
-                
+                if (PowerupsCollected > 0)
+                {
+                    HasShield = true;
+                    PowerupsCollected = 0;
+                }
             }
 
         }
