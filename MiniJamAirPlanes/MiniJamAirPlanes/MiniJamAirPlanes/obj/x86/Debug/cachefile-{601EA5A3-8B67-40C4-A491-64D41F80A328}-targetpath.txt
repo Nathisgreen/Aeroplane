@@ -1,3 +1,4 @@
 Content\GreenBlock.xnb
 Content\sprPlayer.xnb
 Content\sprEnemyBase.xnb
+Content\Bullet.xnb

@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
-      <Time>2012-08-25T12:42:43.3193761+01:00</Time>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
+      <Time>2012-08-25T13:07:59.2023761+01:00</Time>
     </Item>
     <Item>
       <Source>sprPlayer.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb</Output>
-      <Time>2012-08-25T12:42:43.3333761+01:00</Time>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb</Output>
+      <Time>2012-08-25T13:07:59.2093761+01:00</Time>
     </Item>
     <Item>
       <Source>sprEnemyBase.png</Source>
@@ -25,8 +25,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb</Output>
-      <Time>2012-08-25T12:42:43.3323761+01:00</Time>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb</Output>
+      <Time>2012-08-25T13:07:59.2083761+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Bullet.png</Source>
+      <Name>Bullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\Bullet.xnb</Output>
+      <Time>2012-08-25T13:11:27.8123761+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -35,10 +44,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\</RootDirectory>
-      <LoggerRootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\</RootDirectory>
+      <LoggerRootDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

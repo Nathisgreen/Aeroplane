@@ -16,6 +16,10 @@ namespace MiniJamAirPlanes
         int MaxVelocity = 10;
         float VelocityChangePerStep = (float)1.0;
         float Friction = (float)0.5;
+        bool CanFire = true;
+        float ShotDelay = 0.25f;
+        float LastShot = 0.0f;
+
 
         public Player( Vector2 location, Texture2D  sprite)
         {
@@ -25,7 +29,7 @@ namespace MiniJamAirPlanes
 
         public void Update(GameTime gameTime)
         {
-            HandleInput();
+            HandleInput(gameTime);
 
             // Limit Speed
             if (MovementVector.X > MaxVelocity)
@@ -59,6 +63,14 @@ namespace MiniJamAirPlanes
                 MovementVector.X += Friction;
             if (MovementVector.Y < 0)
                 MovementVector.Y += Friction;
+
+            if (CanFire == false)
+            {
+                LastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                if (LastShot > ShotDelay)
+                    CanFire = true;
+            }
+                
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -66,7 +78,7 @@ namespace MiniJamAirPlanes
             spriteBatch.Draw(Sprite, Location, Color.White);
         }
 
-        public void HandleInput()
+        public void HandleInput(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
@@ -86,6 +98,16 @@ namespace MiniJamAirPlanes
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 MovementVector.X += VelocityChangePerStep;
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+                if (CanFire == true)
+                {
+                    Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 16), new Vector2(5, 0), true);
+                    CanFire = false;
+                    LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
             }
 
         }
