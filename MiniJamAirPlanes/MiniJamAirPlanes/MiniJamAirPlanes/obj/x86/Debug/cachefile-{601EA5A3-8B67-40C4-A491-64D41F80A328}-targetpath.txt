@@ -2,3 +2,6 @@ Content\GreenBlock.xnb
 Content\sprPlayer.xnb
 Content\sprEnemyBase.xnb
 Content\Bullet.xnb
+Content\bgWaterFront.xnb
+Content\bgWaterMiddle.xnb
+Content\bgWaterBack.xnb

@@ -32,6 +32,12 @@ namespace MiniJamAirPlanes
         Texture2D PlayerTexture;
         Texture2D EnemyTexture;
         Texture2D BulletTexture;
+
+        static public Texture2D bgWaterFrontTexture;
+        static public Texture2D bgWaterMiddleTexture;
+        static public Texture2D bgWaterBackTexture;
+        List<Background> bgArray = new List<Background>();
+
         private List<BaseEnemy> enemyArray = new List<BaseEnemy>();
 
         public static BulletManager bManager;
@@ -72,7 +78,9 @@ namespace MiniJamAirPlanes
             PlayerTexture = Content.Load<Texture2D>(@"sprPlayer");
             EnemyTexture = Content.Load<Texture2D>(@"sprEnemyBase");
             BulletTexture = Content.Load < Texture2D>(@"Bullet");
-
+            bgWaterFrontTexture = Content.Load<Texture2D>(@"bgWaterFront");
+            bgWaterMiddleTexture = Content.Load<Texture2D>(@"bgWaterMiddle");
+            bgWaterBackTexture = Content.Load<Texture2D>(@"bgWaterBack");
             SetupGameObjects(PlayerTexture, BulletTexture);
         }
 
@@ -108,7 +116,12 @@ namespace MiniJamAirPlanes
             }
 
             createWaves(time);
-          
+
+            foreach (Background aBg in bgArray)
+            {
+                aBg.update(gameTime);
+            }
+
             bManager.Update(gameTime, enemyArray);
 
 
@@ -143,6 +156,11 @@ namespace MiniJamAirPlanes
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
+            foreach (Background aBg in bgArray)
+            {
+                aBg.Draw(spriteBatch);
+            }
+
             thePlayer.Draw(spriteBatch);
 
             foreach(BaseEnemy aEnemy in enemyArray)
@@ -161,6 +179,16 @@ namespace MiniJamAirPlanes
         {
             thePlayer = new Player(new Vector2(100, 320), playertexture);
             bManager = new BulletManager(bullettexture);
+
+            bgArray.Add(new Background(new Vector2(0, 150), bgWaterBackTexture, 1,true));
+            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterBackTexture, 1,true));
+
+            bgArray.Add(new Background(new Vector2(0, 150), bgWaterMiddleTexture, 2,false));
+            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterMiddleTexture, 2,false));
+
+            bgArray.Add(new Background(new Vector2(0, 150), bgWaterFrontTexture, 3,false));
+            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterFrontTexture, 3,false));
+
 
             /*enemyArray.Add(new BaseEnemy(new Vector2(800, 320), EnemyTexture, 3));
             enemyArray.Add(new BaseEnemy(new Vector2(900, 320), EnemyTexture, 3));

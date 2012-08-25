@@ -27,3 +27,6 @@ C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAir
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\MiniJamAirPlanes.pdb
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\MiniJamAirPlanes.exe
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\MiniJamAirPlanes.pdb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterFront.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterBack.xnb
