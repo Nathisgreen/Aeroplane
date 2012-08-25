@@ -150,17 +150,8 @@ namespace MiniJamAirPlanes
         public void SetupGameObjects(Texture2D playertexture, Texture2D bullettexture)
         {
             thePlayer = new Player(new Vector2(100, 320), playertexture);
-
-<<<<<<< HEAD
-            /*for (int i = 0; i < 1; i++)
-=======
             bManager = new BulletManager(bullettexture);
 
-            for (int i = 0; i < 10; i++)
->>>>>>> origin/master
-            {
-                enemyArray.Add(new BaseEnemy(new Vector2(800, 200), EnemyTexture,2));
-            }*/
             enemyArray.Add(new BaseEnemy(new Vector2(800, 320), EnemyTexture, 3));
             enemyArray.Add(new BaseEnemy(new Vector2(900, 320), EnemyTexture, 3));
             enemyArray.Add(new BaseEnemy(new Vector2(1000, 320), EnemyTexture, 3));
