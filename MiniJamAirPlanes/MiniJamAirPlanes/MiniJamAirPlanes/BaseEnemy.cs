@@ -82,6 +82,30 @@ namespace MiniJamAirPlanes
                 usePattern = true;
             }
 
+            if (movementPattern == 7)
+            {
+                wayPoints.Add(new Vector2(700, 0));
+                wayPoints.Add(new Vector2(600, 100));
+                wayPoints.Add(new Vector2(500, 200));
+                wayPoints.Add(new Vector2(400, 300));
+                wayPoints.Add(new Vector2(300, 400));
+                wayPoints.Add(new Vector2(200, 300));
+                usePattern = true;
+                patternSpeed = 3;
+            }
+
+            if (movementPattern == 8)
+            {
+                wayPoints.Add(new Vector2(200, 500));
+                wayPoints.Add(new Vector2(300, 400));
+                wayPoints.Add(new Vector2(400, 300));
+                wayPoints.Add(new Vector2(500, 200));
+                wayPoints.Add(new Vector2(600, 100));
+                wayPoints.Add(new Vector2(700, 0));
+                usePattern = true;
+                patternSpeed = 3;
+            }
+
             if (movementPattern == 4)
             {
                 usePattern = true;

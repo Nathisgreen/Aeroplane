@@ -270,6 +270,33 @@ namespace MiniJamAirPlanes
                enemyArray.Add(new BaseEnemy(new Vector2(900, 420), EnemyTexture, 6));
                enemyArray.Add(new BaseEnemy(new Vector2(1000, 420), EnemyTexture, 6));
            }
+
+           if (time == 1300)
+           {
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 0), EnemyTexture, 7));
+               enemyArray.Add(new BaseEnemy(new Vector2(900, 0), EnemyTexture, 7));
+               enemyArray.Add(new BaseEnemy(new Vector2(1000, 0), EnemyTexture, 7));
+               enemyArray.Add(new BaseEnemy(new Vector2(1100, 0), EnemyTexture, 7));
+               enemyArray.Add(new BaseEnemy(new Vector2(1200, 0), EnemyTexture, 7));
+           }
+
+           if (time == 1500)
+           {
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 0), EnemyTexture, 8));
+               enemyArray.Add(new BaseEnemy(new Vector2(900, 0), EnemyTexture, 8));
+               enemyArray.Add(new BaseEnemy(new Vector2(1000, 0), EnemyTexture, 8));
+               enemyArray.Add(new BaseEnemy(new Vector2(1100, 0), EnemyTexture, 8));
+               enemyArray.Add(new BaseEnemy(new Vector2(1200, 0), EnemyTexture, 8));
+           }
+
+           if (time == 1800)
+           {
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 400), EnemyTexture, 2));
+               enemyArray.Add(new BaseEnemy(new Vector2(900, 450), EnemyTexture, 3));
+               enemyArray.Add(new BaseEnemy(new Vector2(1000, 534), EnemyTexture, 4));
+               enemyArray.Add(new BaseEnemy(new Vector2(1100, 400), EnemyTexture, 5));
+               enemyArray.Add(new BaseEnemy(new Vector2(1200, 350), EnemyTexture, 6));
+           }
         }
 
         public static void addPowerUp(Vector2 pos)
