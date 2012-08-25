@@ -5,3 +5,7 @@ Content\Bullet.xnb
 Content\bgWaterFront.xnb
 Content\bgWaterBack.xnb
 Content\bgWaterMiddle.xnb
+Content\sprPowerUp.xnb
+Content\sprBullet.xnb
+Content\sprHudBox.xnb
+Content\sprHudBoxSelected.xnb

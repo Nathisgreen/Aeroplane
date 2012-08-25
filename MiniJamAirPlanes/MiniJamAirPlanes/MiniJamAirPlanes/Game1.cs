@@ -33,15 +33,25 @@ namespace MiniJamAirPlanes
         Texture2D EnemyTexture;
         Texture2D BulletTexture;
 
+        Texture2D hudBox;
+        Texture2D hudBoxSelected;
+
         static public Texture2D bgWaterFrontTexture;
         static public Texture2D bgWaterMiddleTexture;
         static public Texture2D bgWaterBackTexture;
+
+        static public Texture2D powerTex;
+
         List<Background> bgArray = new List<Background>();
 
-        private List<BaseEnemy> enemyArray = new List<BaseEnemy>();
+        static List<PowerUpgrade> powerList = new List<PowerUpgrade>();
+
+        public static List<BaseEnemy> enemyArray = new List<BaseEnemy>();
 
         public static BulletManager bManager;
         Random aRandom = new Random();
+
+        int powerLevel = 0;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -77,10 +87,14 @@ namespace MiniJamAirPlanes
             // TODO: use this.Content to load your game content here
             PlayerTexture = Content.Load<Texture2D>(@"sprPlayer");
             EnemyTexture = Content.Load<Texture2D>(@"sprEnemyBase");
-            BulletTexture = Content.Load < Texture2D>(@"Bullet");
+            BulletTexture = Content.Load < Texture2D>(@"sprBullet");
             bgWaterFrontTexture = Content.Load<Texture2D>(@"bgWaterFront");
             bgWaterMiddleTexture = Content.Load<Texture2D>(@"bgWaterMiddle");
             bgWaterBackTexture = Content.Load<Texture2D>(@"bgWaterBack");
+            hudBox = Content.Load<Texture2D>(@"sprHudBox");
+            hudBoxSelected = Content.Load<Texture2D>(@"sprHudBoxSelected");
+            powerTex = Content.Load<Texture2D>(@"sprPowerUp");
+
             SetupGameObjects(PlayerTexture, BulletTexture);
         }
 
@@ -122,6 +136,11 @@ namespace MiniJamAirPlanes
                 aBg.update(gameTime);
             }
 
+            foreach (PowerUpgrade aUpgrade in powerList)
+            {
+                aUpgrade.Update(gameTime);
+            }
+
             bManager.Update(gameTime, enemyArray);
 
 
@@ -153,7 +172,6 @@ namespace MiniJamAirPlanes
             FramesThisPeroid++;
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             spriteBatch.Begin();
 
             foreach (Background aBg in bgArray)
@@ -168,7 +186,24 @@ namespace MiniJamAirPlanes
                 aEnemy.Draw(spriteBatch);
             }
 
+            foreach (PowerUpgrade aPower in powerList)
+            {
+                aPower.Draw(spriteBatch);
+            }
+
             bManager.Draw(spriteBatch);
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == powerLevel)
+                {
+                    spriteBatch.Draw(hudBoxSelected, new Vector2(250 + (i * 50 + 30), 20), Color.White);
+                }
+                else
+                {
+                    spriteBatch.Draw(hudBox, new Vector2(250 + (i * 50 + 30), 20), Color.White);
+                }
+            }
 
             spriteBatch.End();
 
@@ -200,12 +235,12 @@ namespace MiniJamAirPlanes
 
             if (time == 10)
             {
-                enemyArray.Add(new BaseEnemy(new Vector2(800, 220), EnemyTexture, 4));
-                enemyArray.Add(new BaseEnemy(new Vector2(900, 220), EnemyTexture, 4));
-                enemyArray.Add(new BaseEnemy(new Vector2(1000, 220), EnemyTexture, 4));
-                enemyArray.Add(new BaseEnemy(new Vector2(1100, 220), EnemyTexture, 4));
-                enemyArray.Add(new BaseEnemy(new Vector2(1200, 220), EnemyTexture, 4));
-                enemyArray.Add(new BaseEnemy(new Vector2(1300, 220), EnemyTexture, 4));
+                enemyArray.Add(new BaseEnemy(new Vector2(800, 220), EnemyTexture, 4,1));
+                enemyArray.Add(new BaseEnemy(new Vector2(900, 220), EnemyTexture, 4,1));
+                enemyArray.Add(new BaseEnemy(new Vector2(1000, 220), EnemyTexture, 4,1));
+                enemyArray.Add(new BaseEnemy(new Vector2(1100, 220), EnemyTexture, 4,1));
+                enemyArray.Add(new BaseEnemy(new Vector2(1200, 220), EnemyTexture, 4,1));
+                enemyArray.Add(new BaseEnemy(new Vector2(1300, 220), EnemyTexture, 4,1));
             }
 
            if (time == 400)
@@ -235,6 +270,11 @@ namespace MiniJamAirPlanes
                enemyArray.Add(new BaseEnemy(new Vector2(900, 420), EnemyTexture, 6));
                enemyArray.Add(new BaseEnemy(new Vector2(1000, 420), EnemyTexture, 6));
            }
+        }
+
+        public static void addPowerUp(Vector2 pos)
+        {
+            powerList.Add(new PowerUpgrade(pos, powerTex));
         }
     }
 }

@@ -93,7 +93,8 @@ namespace MiniJamAirPlanes
                     {
                         if (CollosionRect.Intersects(enemy.ColosionRect))
                         {
-                            enemy.destroyed = true;
+                            enemy.hit();
+                            //enemy.destroyed = true;
                             Hit = true;
                             HitTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 

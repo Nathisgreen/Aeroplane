@@ -64,6 +64,42 @@
       <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb</Output>
       <Time>2012-08-25T15:38:26.7790786+01:00</Time>
     </Item>
+    <Item>
+      <Source>sprPowerUp.png</Source>
+      <Name>sprPowerUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPowerUp.xnb</Output>
+      <Time>2012-08-25T16:20:22.8557192+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprBullet.png</Source>
+      <Name>sprBullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprBullet.xnb</Output>
+      <Time>2012-08-25T16:16:41.1967963+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprHudBox.png</Source>
+      <Name>sprHudBox</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBox.xnb</Output>
+      <Time>2012-08-25T16:31:50.3466441+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprHudBoxSelected.png</Source>
+      <Name>sprHudBoxSelected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb</Output>
+      <Time>2012-08-25T16:32:51.6387985+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

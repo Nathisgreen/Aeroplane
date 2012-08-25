@@ -35,12 +35,10 @@ namespace MiniJamAirPlanes
 
             if (Location.X > Game1.WindowWidth)
             {
-                Trace.WriteLine("Off screen being destroyed");
                 destroyed = true;
             }
             if( Location.X < 0 )
             {
-                Trace.WriteLine("Off screen being destroyed");
                 destroyed = true;
             }
 
@@ -48,6 +46,7 @@ namespace MiniJamAirPlanes
             {
                 if (CollosionRect.Intersects(enemy.ColosionRect))
                 {
+                    enemy.hit();
                     enemy.destroyed = true;
                     destroyed = true;
 

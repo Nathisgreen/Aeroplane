@@ -77,6 +77,7 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="BulletManager.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PowerUpgrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

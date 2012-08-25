@@ -34,10 +34,13 @@ namespace MiniJamAirPlanes
         public Rectangle ColosionRect;
         public bool destroyed = false;
 
-        public BaseEnemy(Vector2 location, Texture2D sprite, int movementPattern)
+        public int ID = 0;
+
+        public BaseEnemy(Vector2 location, Texture2D sprite, int movementPattern, int ID = 0)
         {
             this.Location = location;
             this.Sprite = sprite;
+            this.ID = ID;
             if (movementPattern != 2)
             {
                 this.Velocity.X = -5;
@@ -187,6 +190,33 @@ namespace MiniJamAirPlanes
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Sprite, Location, Color.White);
+        }
+
+        public void hit()
+        {
+            destroyed = true;
+
+            if (ID != 0)
+            {
+                bool aBool = true;
+                foreach (BaseEnemy aEnemy in Game1.enemyArray)
+                {
+                    if (aEnemy != this)
+                    {
+                        if (aEnemy.ID == ID)
+                        {
+                            aBool = false;
+                        }
+                    }
+                }
+
+                if (aBool)
+                {
+                    Trace.WriteLine("CREATE");
+                    //create power up part
+                    Game1.addPowerUp(this.Location);
+                }
+            }
         }
     }
 }
