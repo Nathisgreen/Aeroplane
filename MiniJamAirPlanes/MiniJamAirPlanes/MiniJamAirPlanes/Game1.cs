@@ -22,6 +22,8 @@ namespace MiniJamAirPlanes
         public static int WindowWidth = 800;
         public static int WindowHeight = 640;
 
+        int time = 0;
+        int wave = 0;
         int FramesThisPeroid = 0;
         int FPS = 0;
         TimeSpan ElapsedTime = TimeSpan.Zero;
@@ -30,7 +32,6 @@ namespace MiniJamAirPlanes
         Texture2D PlayerTexture;
         Texture2D EnemyTexture;
         Texture2D BulletTexture;
-        BaseEnemy testEnemy;
         private List<BaseEnemy> enemyArray = new List<BaseEnemy>();
         public static BulletManager bManager;
         Random aRandom = new Random();
@@ -95,14 +96,16 @@ namespace MiniJamAirPlanes
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            // TODO: Add your update logic here
-
+            time++;
+        
             thePlayer.Update(gameTime);
 
-            foreach (BaseEnemy aEnemy in enemyArray)
+            for (int i = 0; i < enemyArray.Count; i++ )
             {
-                aEnemy.Update(gameTime);
+                enemyArray[i].Update(gameTime);
             }
+
+            createWaves(time);
 
             bManager.Update(gameTime);
 
@@ -152,9 +155,51 @@ namespace MiniJamAirPlanes
             thePlayer = new Player(new Vector2(100, 320), playertexture);
             bManager = new BulletManager(bullettexture);
 
-            enemyArray.Add(new BaseEnemy(new Vector2(800, 320), EnemyTexture, 3));
+            /*enemyArray.Add(new BaseEnemy(new Vector2(800, 320), EnemyTexture, 3));
             enemyArray.Add(new BaseEnemy(new Vector2(900, 320), EnemyTexture, 3));
-            enemyArray.Add(new BaseEnemy(new Vector2(1000, 320), EnemyTexture, 3));
+            enemyArray.Add(new BaseEnemy(new Vector2(1000, 320), EnemyTexture, 3));*/
+        }
+
+        public void createWaves(int time)
+        {
+
+            if (time == 10)
+            {
+                enemyArray.Add(new BaseEnemy(new Vector2(800, 220), EnemyTexture, 4));
+                enemyArray.Add(new BaseEnemy(new Vector2(900, 220), EnemyTexture, 4));
+                enemyArray.Add(new BaseEnemy(new Vector2(1000, 220), EnemyTexture, 4));
+                enemyArray.Add(new BaseEnemy(new Vector2(1100, 220), EnemyTexture, 4));
+                enemyArray.Add(new BaseEnemy(new Vector2(1200, 220), EnemyTexture, 4));
+                enemyArray.Add(new BaseEnemy(new Vector2(1300, 220), EnemyTexture, 4));
+            }
+
+           if (time == 400)
+            {
+                enemyArray.Add(new BaseEnemy(new Vector2(800, 420), EnemyTexture, 5));
+                enemyArray.Add(new BaseEnemy(new Vector2(900, 420), EnemyTexture, 5));
+                enemyArray.Add(new BaseEnemy(new Vector2(1000, 420), EnemyTexture,5));
+                enemyArray.Add(new BaseEnemy(new Vector2(1100, 420), EnemyTexture,5));
+                enemyArray.Add(new BaseEnemy(new Vector2(1200, 420), EnemyTexture,5));
+                enemyArray.Add(new BaseEnemy(new Vector2(1300, 420), EnemyTexture,5));
+            }
+
+           if (time == 800)
+           {
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 500), EnemyTexture, 0));
+               enemyArray.Add(new BaseEnemy(new Vector2(1300, 35), EnemyTexture, 0));
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 120), EnemyTexture, 3));
+               enemyArray.Add(new BaseEnemy(new Vector2(900, 120), EnemyTexture, 3));
+               enemyArray.Add(new BaseEnemy(new Vector2(1000, 120), EnemyTexture, 3));
+           }
+
+           if (time == 1100)
+           {
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 400), EnemyTexture, 1));
+               enemyArray.Add(new BaseEnemy(new Vector2(1300, 35), EnemyTexture, 1));
+               enemyArray.Add(new BaseEnemy(new Vector2(800, 420), EnemyTexture, 6));
+               enemyArray.Add(new BaseEnemy(new Vector2(900, 420), EnemyTexture, 6));
+               enemyArray.Add(new BaseEnemy(new Vector2(1000, 420), EnemyTexture, 6));
+           }
         }
     }
 }

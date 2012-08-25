@@ -26,6 +26,10 @@ namespace MiniJamAirPlanes
         private bool yDone = false;
         private bool patternDone = false;
 
+        private bool usePattern = false;
+        private int patternSpeed = 3;
+        private Vector2 finishVelocity = new Vector2(-3, 0);
+
         public BaseEnemy(Vector2 location, Texture2D sprite, int movementPattern)
         {
             this.Location = location;
@@ -41,6 +45,7 @@ namespace MiniJamAirPlanes
                 wayPoints.Add(new Vector2(500, 500));
                 wayPoints.Add(new Vector2(500,  200));
                 wayPoints.Add(new Vector2(700, 200));
+                usePattern = true;
             }
 
             if (movementPattern == 3)
@@ -49,21 +54,37 @@ namespace MiniJamAirPlanes
                 wayPoints.Add(new Vector2(350, 250));
                 wayPoints.Add(new Vector2(420, 230));
                 wayPoints.Add(new Vector2(490, 320));
-                //wayPoints.Add(new Vector2(420, 250));
-               // wayPoints.Add(new Vector2(380, 320));
-                //wayPoints.Add(new Vector2(420, 360));
-                //wayPoints.Add(new Vector2(420, 330));
+                usePattern = true;
+            }
+
+            if (movementPattern == 6)
+            {
+                wayPoints.Add(new Vector2(420, 320));
+                wayPoints.Add(new Vector2(490, 250));
+                wayPoints.Add(new Vector2(420, 230));
+                wayPoints.Add(new Vector2(350, 320));
+                usePattern = true;
+            }
+
+            if (movementPattern == 4)
+            {
+                usePattern = true;
+                this.Velocity.X = -3;
+                wayPoints.Add(new Vector2(320, 220));
+                wayPoints.Add(new Vector2(520, 420));
+            }
+
+            if (movementPattern == 5)
+            {
+                usePattern = true;
+                this.Velocity.X = -3;
+                wayPoints.Add(new Vector2(320, 420));
+                wayPoints.Add(new Vector2(520, 220));
             }
         }
 
         public void Update(GameTime gameTime)
         {
-
-            if (Location.X < -100)
-            {
-                Location.X = 800;
-            }
-
             if (movementPattern == 1)
             {
                 if (changeTime < 60)
@@ -92,9 +113,8 @@ namespace MiniJamAirPlanes
                 }
             }
             
-            if (movementPattern == 2 || movementPattern == 3)
+            if (usePattern)
             {
-                Trace.WriteLine("Distance1: " +MathHelper.Distance(Location.X, wayPoints[wayPointCount].X));
                 //Trace.WriteLine("Distance: " + (Math.Abs(Location.X - wayPoints[wayPointCount].X)));
                 if (!patternDone)
                 {
@@ -102,11 +122,11 @@ namespace MiniJamAirPlanes
                     {
                         if (Location.X < wayPoints[wayPointCount].X)
                         {
-                            Velocity.X = 3f;
+                            Velocity.X = patternSpeed;
                         }
                         else
                         {
-                            Velocity.X = -3f;
+                            Velocity.X = -patternSpeed;
                         }
                     }
                     else
@@ -119,11 +139,11 @@ namespace MiniJamAirPlanes
                     {
                         if (Location.Y < wayPoints[wayPointCount].Y)
                         {
-                            Velocity.Y = 3f;
+                            Velocity.Y = patternSpeed;
                         }
                         else
                         {
-                            Velocity.Y = -3f;
+                            Velocity.Y = -patternSpeed;
                         }
                     }
                     else
@@ -138,56 +158,17 @@ namespace MiniJamAirPlanes
                         if (wayPointCount < wayPoints.Count-1)
                         {
                             wayPointCount++;
-                            Trace.WriteLine("way point: " + wayPointCount);
-                            Trace.WriteLine("changing way point");
+
                         }
                         else
                         {
-                            Velocity.X = -5;
+                            //Velocity.X = -5;
+                            Velocity = finishVelocity;
                             patternDone = true;
-                            Trace.WriteLine("pattern done");
                         }
                     }
                 }
             }
-
-
-                /*Trace.WriteLine("WayPointCount: " + wayPointCount);
-
-                if (MathHelper.Distance(Location.X,wayPoints[wayPointCount].X) < 1)
-               // if (Math.Abs(Location.X - wayPoints[wayPointCount].X) > 50)
-                {
-                    if (Location.X > wayPoints[wayPointCount].X)
-                    {
-                        Location.X -= 5;
-                    }
-                    else
-                    {
-                        Location.X += 5;
-                    }
-                }
-
-                if (MathHelper.Distance(Location.Y, wayPoints[wayPointCount].Y) < 1)
-                {
-                    if (Location.Y > wayPoints[wayPointCount].Y)
-                    {
-                        Location.Y -= 5;
-                    }
-                    else
-                    {
-                        Location.Y += 5;
-                    }
-                }
-
-                if ((MathHelper.Distance(Location.X,wayPoints[wayPointCount].X) < 10) && (MathHelper.Distance(Location.Y, wayPoints[wayPointCount].Y) < 10))
-                {
-                    if (wayPointCount < wayPoints.Count)
-                    {
-                        wayPointCount++;
-                    }
-                }
-
-            }*/
 
             Location += Velocity;
 
