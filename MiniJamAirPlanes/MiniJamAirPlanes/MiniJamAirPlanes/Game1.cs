@@ -59,7 +59,7 @@ namespace MiniJamAirPlanes
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            PlayerTexture = Content.Load<Texture2D>(@"GreenBlock");
+            PlayerTexture = Content.Load<Texture2D>(@"sprPlayer");
 
             SetupGameObjects(PlayerTexture);
         }
