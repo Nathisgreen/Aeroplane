@@ -19,12 +19,24 @@ namespace MiniJamAirPlanes
         bool CanFire = true;
         float ShotDelay = 0.25f;
         float LastShot = 0.0f;
+        Rectangle CollosionRect;
 
 
         public Player( Vector2 location, Texture2D  sprite)
         {
             this.Location = location;
             this.Sprite = sprite;
+            CollosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, sprite.Width, sprite.Height);
+        }
+
+        public Vector2 GetLocation
+        {
+            get { return Location; }
+        }
+
+        public Rectangle GetCollosionRect
+        {
+            get { return CollosionRect; }
         }
 
         public void Update(GameTime gameTime)
@@ -53,6 +65,10 @@ namespace MiniJamAirPlanes
                 Location.X = Game1.WindowWidth - Sprite.Width;
             if (Location.Y > Game1.WindowHeight - Sprite.Height)
                 Location.Y = Game1.WindowHeight - Sprite.Height;
+
+            // keep collosion rect in sync
+            CollosionRect.X = (int)Location.X;
+            CollosionRect.Y = (int)Location.Y;
 
             //apply friction
             if (MovementVector.X > 0)

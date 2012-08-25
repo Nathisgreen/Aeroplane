@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace MiniJamAirPlanes
 {
-    class BaseEnemy
+    public class BaseEnemy
     {
         Vector2 Location;
         Texture2D Sprite;
@@ -26,9 +26,14 @@ namespace MiniJamAirPlanes
         private bool yDone = false;
         private bool patternDone = false;
 
+<<<<<<< HEAD
         private bool usePattern = false;
         private int patternSpeed = 3;
         private Vector2 finishVelocity = new Vector2(-3, 0);
+=======
+        public Rectangle ColosionRect;
+        public bool destroyed = false;
+>>>>>>> origin/master
 
         public BaseEnemy(Vector2 location, Texture2D sprite, int movementPattern)
         {
@@ -56,6 +61,7 @@ namespace MiniJamAirPlanes
                 wayPoints.Add(new Vector2(490, 320));
                 usePattern = true;
             }
+<<<<<<< HEAD
 
             if (movementPattern == 6)
             {
@@ -73,6 +79,14 @@ namespace MiniJamAirPlanes
                 wayPoints.Add(new Vector2(320, 220));
                 wayPoints.Add(new Vector2(520, 420));
             }
+=======
+
+            ColosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, sprite.Width, sprite.Height);
+        }
+
+        public void Update(GameTime gameTime, Rectangle PlayerCollsionRect)
+        {
+>>>>>>> origin/master
 
             if (movementPattern == 5)
             {
@@ -171,6 +185,15 @@ namespace MiniJamAirPlanes
             }
 
             Location += Velocity;
+
+            ColosionRect.X = (int)Location.X;
+            ColosionRect.Y = (int)Location.Y;
+
+            if (ColosionRect.Intersects(PlayerCollsionRect))
+            {
+                Trace.WriteLine("Poosible Collossion");
+                destroyed = true;
+            }
 
         }
 
