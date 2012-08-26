@@ -38,7 +38,6 @@ namespace MiniJamAirPlanes
         Vector2 ShieldLocation;
         Color ShieldColor = Color.Red;
 
-
         public Player( Vector2 location, Texture2D  sprite)
         {
             this.Location = location;
@@ -218,7 +217,7 @@ namespace MiniJamAirPlanes
             }
             else
             {
-                spriteBatch.DrawString(Game1.Size8, "N00B!!!!!", new Vector2(140, 200), Color.Red, 0f, Game1.vectorZero, 15.0f, SpriteEffects.None, 0);
+                    spriteBatch.DrawString(Game1.Size8, "N00B!!!!!", new Vector2(140, 200), Color.Red, 0f, Game1.vectorZero, 15.0f, SpriteEffects.None, 0);
             }
         }
 

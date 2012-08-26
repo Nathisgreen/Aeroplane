@@ -304,6 +304,9 @@ namespace MiniJamAirPlanes
                 enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 300, 220), EnemyTexture, 4, 1));
                 enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 400, 220), EnemyTexture, 4, 1));
                 enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+500, 220), EnemyTexture, 4, 1));
+
+
+                //enemyArray.Add(new Boss(new Vector2(1000, WindowHeight / 2), PlayerTexture));
             }
 
            if (time == 400)
