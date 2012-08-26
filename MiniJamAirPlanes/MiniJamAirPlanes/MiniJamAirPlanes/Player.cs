@@ -26,12 +26,16 @@ namespace MiniJamAirPlanes
         float MinShotDelay = 0.1f;
         float ShotDelayChange = 0.1f;
         Rectangle CollosionRect;
-        int HasShield = 3;
+        int HasShield = 0;
         bool Dead = false;
         bool Hit = false;
         float HitTime = 0.0f;
         float HitTimer = 0.5f;
+<<<<<<< HEAD
         public int PowerupsCollected = 1;
+=======
+        public int PowerupsCollected = 0;
+>>>>>>> origin/master
         KeyboardState previousState;
         float Depth = 0.2f;
         float ShieldDepth = 0.19f;
@@ -61,6 +65,11 @@ namespace MiniJamAirPlanes
         public int PlayerShield
         {
             get { return HasShield; }
+        }
+
+        public int PlayerShots
+        {
+            get { return Shots; }
         }
 
         public void Update(GameTime gameTime, List<BaseEnemy> enemies, List<PowerUpgrade> powerups, List<Bullet> bullets)
@@ -171,6 +180,8 @@ namespace MiniJamAirPlanes
                     HitTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
                     if (HitTime > HitTimer)
                         Hit = false;
+
+                    Dead = true;
                 }
             }
 
@@ -205,9 +216,13 @@ namespace MiniJamAirPlanes
 
                     if (HasShield > 0)
                     {
-                        spriteBatch.Draw(Game1.sheildText, ShieldLocation, null, ShieldColor, 0f, Game1.vectorZero, 1f ,SpriteEffects.None, ShieldDepth);
+                        spriteBatch.Draw(Game1.sheildText, ShieldLocation, null, ShieldColor, 0f, Game1.vectorZero, 1f, SpriteEffects.None, ShieldDepth);
                     }
                 }
+            }
+            else
+            {
+                spriteBatch.DrawString(Game1.Size8, "N00B!!!!!", new Vector2(140, 200), Color.Red, 0f, Game1.vectorZero, 15.0f, SpriteEffects.None, 0);
             }
         }
 
@@ -251,6 +266,14 @@ namespace MiniJamAirPlanes
                         CanFire = false;
                         LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
                     }
+                    if (Shots == 3)
+                    {
+                        Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 8), new Vector2(6, -0.05f), true);
+                        Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 20), new Vector2(6, 0), true);
+                        Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 32), new Vector2(6, 0.05f), true);
+                        CanFire = false;
+                        LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    }
                 }
             }
 
@@ -283,8 +306,11 @@ namespace MiniJamAirPlanes
                             break;
 
                         case 4:
-                            Shots++;
-                            PowerupsCollected = 0;
+                            if (Shots < 3)
+                            {
+                                Shots++;
+                                PowerupsCollected = 0;
+                            }
                             break;
                     }
                 }
