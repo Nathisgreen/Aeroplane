@@ -31,11 +31,7 @@ namespace MiniJamAirPlanes
         bool Hit = false;
         float HitTime = 0.0f;
         float HitTimer = 0.5f;
-<<<<<<< HEAD
         public int PowerupsCollected = 1;
-=======
-        public int PowerupsCollected = 0;
->>>>>>> origin/master
         KeyboardState previousState;
         float Depth = 0.2f;
         float ShieldDepth = 0.19f;
