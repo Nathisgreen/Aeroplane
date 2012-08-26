@@ -40,7 +40,7 @@ namespace MiniJamAirPlanes
         static public Texture2D bgWaterMiddleTexture;
         static public Texture2D bgWaterBackTexture;
         static public Texture2D sheildText;
-
+        public static Texture2D explosionTex;
         static public Texture2D powerTex;
 
         List<Background> bgArray = new List<Background>();
@@ -65,6 +65,8 @@ namespace MiniJamAirPlanes
         Vector2 HUDDrawNow = new Vector2(0, 0);
         int spacing = 75;
         Rectangle CurrentBoxLocation = new Rectangle(0, 0, 70, 16);
+
+        public static List<Explosion> explosionList = new List<Explosion>();
 
         public static Vector2 vectorZero
         {
@@ -116,7 +118,7 @@ namespace MiniJamAirPlanes
             sheildText = Content.Load<Texture2D>(@"sprSheild");
             DebugFont = Content.Load<SpriteFont>(@"debugFont");
             Size8 = Content.Load<SpriteFont>(@"FontSize8");
-
+            explosionTex = Content.Load<Texture2D>(@"sprExplosion");
 
             SetupGameObjects(PlayerTexture, BulletTexture);
         }
@@ -154,6 +156,22 @@ namespace MiniJamAirPlanes
             }
 
             createWaves(time);
+
+            foreach(Explosion aExplosion in explosionList)
+            {
+                if (aExplosion.active == true)
+                {
+                    aExplosion.Update(gameTime);
+                }
+            }
+
+            for (int i = 0; i < explosionList.Count; i++)
+            {
+                if (explosionList[i].active == false)
+                {
+                    explosionList.Remove(explosionList[i]);
+                }
+            }
 
             foreach (Background aBg in bgArray)
             {
@@ -212,6 +230,15 @@ namespace MiniJamAirPlanes
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             spriteBatch.DrawString(DebugFont, "Mouse X: " + mouse.X, new Vector2(mouse.X, mouse.Y), Color.White);
             spriteBatch.DrawString(DebugFont, "Mouse Y: " + mouse.Y, new Vector2(mouse.X, mouse.Y + 30), Color.White);
+
+
+            foreach (Explosion aExplosion in explosionList)
+            {
+                //if (aExplosion.active == true)
+                //{
+                    aExplosion.Draw(spriteBatch);
+                //}
+            }
 
             foreach (Background aBg in bgArray)
             {

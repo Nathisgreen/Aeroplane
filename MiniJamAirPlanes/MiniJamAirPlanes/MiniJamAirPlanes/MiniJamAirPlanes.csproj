@@ -73,10 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Background.cs" />
+    <Compile Include="Bang.cs" />
     <Compile Include="BaseEnemy.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="BulletManager.cs" />
     <Compile Include="DownShotEnemy.cs" />
+    <Compile Include="Explosion.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PowerUpgrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
