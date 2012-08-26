@@ -145,6 +145,7 @@ namespace MiniJamAirPlanes
                             {
                                 Hit = true;
                                 HitTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                                theBullet.destroyed = true;
                             }
 
                         }
