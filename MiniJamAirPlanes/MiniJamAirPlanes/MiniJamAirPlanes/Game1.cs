@@ -232,8 +232,8 @@ namespace MiniJamAirPlanes
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            spriteBatch.DrawString(DebugFont, "Mouse X: " + mouse.X, new Vector2(mouse.X, mouse.Y), Color.White);
-            spriteBatch.DrawString(DebugFont, "Mouse Y: " + mouse.Y, new Vector2(mouse.X, mouse.Y + 30), Color.White);
+            //spriteBatch.DrawString(DebugFont, "Mouse X: " + mouse.X, new Vector2(mouse.X, mouse.Y), Color.White);
+            //spriteBatch.DrawString(DebugFont, "Mouse Y: " + mouse.Y, new Vector2(mouse.X, mouse.Y + 30), Color.White);
 
 
             foreach (Explosion aExplosion in explosionList)
