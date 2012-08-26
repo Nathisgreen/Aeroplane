@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010 Express for Windows Phone
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniJamAirPlanes", "MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes.csproj", "{BD645DB8-2B2D-489F-982C-BECE1F32F983}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "MiniJamAirPlanesContent", "MiniJamAirPlanes\MiniJamAirPlanesContent\MiniJamAirPlanesContent.contentproj", "{601EA5A3-8B67-40C4-A491-64D41F80A328}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniJamAirPlanesContent", "MiniJamAirPlanes\MiniJamAirPlanesContent\MiniJamAirPlanesContent.contentproj", "{601EA5A3-8B67-40C4-A491-64D41F80A328}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
