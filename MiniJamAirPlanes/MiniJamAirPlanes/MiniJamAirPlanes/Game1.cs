@@ -145,7 +145,7 @@ namespace MiniJamAirPlanes
             mouse = Mouse.GetState();
             time++;
         
-            thePlayer.Update(gameTime, enemyArray, powerList);
+            thePlayer.Update(gameTime, enemyArray, powerList, bManager.bullets);
 
             for (int i = 0; i < enemyArray.Count; i++ )
             {

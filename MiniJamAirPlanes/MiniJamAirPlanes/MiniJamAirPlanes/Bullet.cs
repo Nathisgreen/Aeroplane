@@ -8,13 +8,13 @@ using System.Diagnostics;
 
 namespace MiniJamAirPlanes
 {
-    class Bullet
+    public class Bullet
     {
         Vector2 Location;
         Vector2 Velocity;
         Texture2D Sprite;
         public bool FiredByPLayer;
-        Rectangle CollosionRect;
+        public Rectangle CollosionRect;
         public bool destroyed = false;
         
 

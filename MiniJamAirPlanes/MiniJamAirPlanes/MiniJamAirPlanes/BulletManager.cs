@@ -9,7 +9,7 @@ namespace MiniJamAirPlanes
 {
     public class BulletManager
     {
-        List<Bullet> bullets;
+        public List<Bullet> bullets;
         Texture2D BulletTexture;
 
         public BulletManager(Texture2D texture)
