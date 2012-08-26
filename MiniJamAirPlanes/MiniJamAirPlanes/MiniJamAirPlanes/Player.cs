@@ -37,12 +37,10 @@ namespace MiniJamAirPlanes
         float ShieldDepth = 0.19f;
         Vector2 ShieldLocation;
         Color ShieldColor = Color.Red;
-<<<<<<< HEAD
         Vector2 defaultLocation;
         int deadTime = 0;
         int deadtimer = 90;
-=======
->>>>>>> origin/master
+
 
         public Player( Vector2 location, Texture2D  sprite)
         {
