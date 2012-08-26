@@ -109,6 +109,24 @@
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb</Output>
       <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
+    <Item>
+      <Source>debugFont.spritefont</Source>
+      <Name>debugFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\debugFont.xnb</Output>
+      <Time>2012-08-26T13:18:33.0245838+01:00</Time>
+    </Item>
+    <Item>
+      <Source>FontSize8.spritefont</Source>
+      <Name>FontSize8</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\FontSize8.xnb</Output>
+      <Time>2012-08-26T13:18:33.0089838+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{601EA5A3-8B67-40C4-A491-64D41F80A328}</ContentProjectGUID>

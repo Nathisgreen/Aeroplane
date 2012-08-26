@@ -13,9 +13,11 @@ namespace MiniJamAirPlanes
         Vector2 Location;
         Texture2D Sprite;
         Vector2 MovementVector = new Vector2(0, 0);
-        int MaxVelocity = 10;
-        float VelocityChangePerStep = (float)1.0;
-        float Friction = (float)0.5;
+        int MaxMaxVelocity = 10;
+        int CurrentMaxVelocity = 5;
+        int VelocityChange = 5;
+        float CurrentVelocityChangePerStep = 1.0f;
+        float Friction = 0.5f;
         bool CanFire = true;
         float DefaultShotDelay = 0.5f;
         float ShotDelay;
@@ -60,14 +62,14 @@ namespace MiniJamAirPlanes
                 HandleInput(gameTime);
 
                 // Limit Speed
-                if (MovementVector.X > MaxVelocity)
-                    MovementVector.X = MaxVelocity;
-                if (MovementVector.X < -MaxVelocity)
-                    MovementVector.X = -MaxVelocity;
-                if (MovementVector.Y > MaxVelocity)
-                    MovementVector.Y = MaxVelocity;
-                if (MovementVector.Y < -MaxVelocity)
-                    MovementVector.Y = -MaxVelocity;
+                if (MovementVector.X > CurrentMaxVelocity)
+                    MovementVector.X = CurrentMaxVelocity;
+                if (MovementVector.X < -CurrentMaxVelocity)
+                    MovementVector.X = -CurrentMaxVelocity;
+                if (MovementVector.Y > CurrentMaxVelocity)
+                    MovementVector.Y = CurrentMaxVelocity;
+                if (MovementVector.Y < -CurrentMaxVelocity)
+                    MovementVector.Y = -CurrentMaxVelocity;
 
                 // move
                 Location += MovementVector;
@@ -184,22 +186,22 @@ namespace MiniJamAirPlanes
 
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
-                MovementVector.Y -= VelocityChangePerStep;
+                MovementVector.Y -= CurrentVelocityChangePerStep;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
-                MovementVector.X -= VelocityChangePerStep;
+                MovementVector.X -= CurrentVelocityChangePerStep;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
-                MovementVector.Y += VelocityChangePerStep;
+                MovementVector.Y += CurrentVelocityChangePerStep;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
-                MovementVector.X += VelocityChangePerStep;
+                MovementVector.X += CurrentVelocityChangePerStep;
             }
 
             if (KeyPressed(Keys.Space))
@@ -217,7 +219,7 @@ namespace MiniJamAirPlanes
                 if (PowerupsCollected > 0)
                 {
                     HasShield++;
-                    PowerupsCollected --;
+                    PowerupsCollected = 0;
                 }
             }
 

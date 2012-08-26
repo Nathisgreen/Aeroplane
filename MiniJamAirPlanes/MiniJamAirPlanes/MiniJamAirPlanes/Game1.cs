@@ -19,7 +19,7 @@ namespace MiniJamAirPlanes
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public static int WindowWidth = 800;
+        public static int WindowWidth = 1240;
         public static int WindowHeight = 640;
 
         int time = 0;
@@ -55,6 +55,16 @@ namespace MiniJamAirPlanes
         int powerLevel = -1;
 
         private static Vector2 VectorZero = new Vector2(0, 0);
+
+        SpriteFont DebugFont;
+        SpriteFont Size8;
+
+        //HUD
+        float HUDDepth = 1f;
+        Vector2 HUDStartLocation = new Vector2(450, 20);
+        Vector2 HUDDrawNow = new Vector2(0, 0);
+        int spacing = 75;
+        Rectangle CurrentBoxLocation = new Rectangle(0, 0, 70, 16);
 
         public static Vector2 vectorZero
         {
@@ -104,6 +114,10 @@ namespace MiniJamAirPlanes
             hudBoxSelected = Content.Load<Texture2D>(@"sprHudBoxSelected");
             powerTex = Content.Load<Texture2D>(@"sprPowerUp");
             sheildText = Content.Load<Texture2D>(@"sprSheild");
+            DebugFont = Content.Load<SpriteFont>(@"debugFont");
+            Size8 = Content.Load<SpriteFont>(@"FontSize8");
+
+
             SetupGameObjects(PlayerTexture, BulletTexture);
         }
 
@@ -215,17 +229,7 @@ namespace MiniJamAirPlanes
 
             bManager.Draw(spriteBatch);
 
-            for (int i = 0; i < 5; i++)
-            {
-                if (i == powerLevel)
-                {
-                    spriteBatch.Draw(hudBoxSelected, new Vector2(250 + (i * 50 + 30), 20), Color.White);
-                }
-                else
-                {
-                    spriteBatch.Draw(hudBox, new Vector2(250 + (i * 50 + 30), 20), Color.White);
-                }
-            }
+            DrawHud();
 
             spriteBatch.End();
 
@@ -326,6 +330,49 @@ namespace MiniJamAirPlanes
         public static void addPowerUp(Vector2 pos)
         {
             powerList.Add(new PowerUpgrade(pos, powerTex));
+        }
+
+        public void DrawHud()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == powerLevel)
+                {
+                    //spriteBatch.Draw(hudBoxSelected, new Vector2(250 + (i * 50 + 30), 20), Color.White);
+                    CurrentBoxLocation.X = (int)HUDStartLocation.X + (i * spacing + 30);
+                    CurrentBoxLocation.Y = (int)HUDStartLocation.Y;
+                    spriteBatch.Draw(hudBoxSelected, CurrentBoxLocation, null, Color.White, 0f, Game1.vectorZero, SpriteEffects.None, HUDDepth);
+                }
+                else
+                {
+                    //spriteBatch.Draw(hudBox, new Vector2(250 + (i * 50 + 30), 20), Color.White);
+                    CurrentBoxLocation.X =  (int)HUDStartLocation.X + (i * spacing + 30);
+                    CurrentBoxLocation.Y = (int)HUDStartLocation.Y;
+                    spriteBatch.Draw(hudBox, CurrentBoxLocation, null,  Color.White, 0f, Game1.vectorZero, SpriteEffects.None, HUDDepth);
+                }
+
+                HUDDrawNow.X = HUDStartLocation.X + (i * spacing + 35);
+                HUDDrawNow.Y = HUDStartLocation.Y;
+
+                switch (i)
+                {
+                    case 0: HUDDrawNow.X += 3; 
+                        spriteBatch.DrawString(Size8, "Speed Up", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                        break;
+                    case 1: HUDDrawNow.X -= 2;
+                        spriteBatch.DrawString(Size8, "Shot Rate", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                        break;
+                    case 2: HUDDrawNow.X += 7; 
+                        spriteBatch.DrawString(Size8, "Shield", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                        break;
+                    case 3: HUDDrawNow.X += 15; 
+                        spriteBatch.DrawString(Size8, "Laser", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                        break;
+                    case 4: HUDDrawNow.X += 20; 
+                        spriteBatch.DrawString(Size8, "Meh!", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                        break;
+                }
+            }
         }
     }
 }
