@@ -15,15 +15,17 @@ namespace MiniJamAirPlanes
         Vector2 MovementVector = new Vector2(0, 0);
         int MaxMaxVelocity = 10;
         int CurrentMaxVelocity = 5;
-        int VelocityChange = 5;
+        int VelocityChange = 2;
         float CurrentVelocityChangePerStep = 1.0f;
         float Friction = 0.5f;
         bool CanFire = true;
         float DefaultShotDelay = 0.5f;
         float ShotDelay;
         float LastShot = 0.0f;
+        float MinShotDelay = 0.1f;
+        float ShotDelayChange = 0.1f;
         Rectangle CollosionRect;
-        int HasShield = 0;
+        int HasShield = 3;
         bool Dead = false;
         bool Hit = false;
         float HitTime = 0.0f;
@@ -55,7 +57,7 @@ namespace MiniJamAirPlanes
             get { return CollosionRect; }
         }
 
-        public void Update(GameTime gameTime, List<BaseEnemy> enemies, List<PowerUpgrade> powerups)
+        public void Update(GameTime gameTime, List<BaseEnemy> enemies, List<PowerUpgrade> powerups, List<Bullet> bullets)
         {
             if (Dead == false)
             {
@@ -126,6 +128,26 @@ namespace MiniJamAirPlanes
                     {
                         powup.Collected = true;
                         PowerupsCollected++;
+                    }
+                }
+
+                foreach (Bullet theBullet in bullets)
+                {
+                    if (theBullet.FiredByPLayer == false)
+                    {
+                        if (theBullet.CollosionRect.Intersects(CollosionRect))
+                        {
+                            if (HasShield > 0)
+                            {
+                                HasShield--;
+                            }
+                            else
+                            {
+                                Hit = true;
+                                HitTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                            }
+
+                        }
                     }
                 }
 
@@ -218,8 +240,27 @@ namespace MiniJamAirPlanes
             {
                 if (PowerupsCollected > 0)
                 {
-                    HasShield++;
-                    PowerupsCollected = 0;
+                    switch (PowerupsCollected)
+                    {
+                        case 1:
+                            CurrentMaxVelocity += VelocityChange;
+                            if (CurrentMaxVelocity > MaxMaxVelocity)
+                                CurrentMaxVelocity = MaxMaxVelocity;
+                            PowerupsCollected = 0;
+                            break;
+
+                        case 2:
+                            ShotDelay -= ShotDelayChange;
+                            if (ShotDelay < MinShotDelay)
+                                ShotDelay = MinShotDelay;
+                            PowerupsCollected = 0;
+                            break;
+                        
+                        case 3:
+                            HasShield++;
+                            PowerupsCollected = 0;
+                            break;
+                    }
                 }
             }
 

@@ -1,5 +1,5 @@
 E:\Xnaprojects\Bitbuckettest\MiniJam1(3)\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\ResolveAssemblyReference.cache
-E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplane\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -89,3 +89,7 @@ C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplane\MiniJamAirPlanes\M
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplane\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprExplosion.xnb
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplane\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprWaterPart.xnb
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplane\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSmokePart.xnb
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlane1.xnb
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprExplosion.xnb
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprWaterPart.xnb
+E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSmokePart.xnb
