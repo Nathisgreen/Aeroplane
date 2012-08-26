@@ -14,11 +14,12 @@ namespace MiniJamAirPlanes
         Texture2D Sprite;
         Vector2 MovementVector = new Vector2(0, 0);
         int MaxMaxVelocity = 10;
-        int CurrentMaxVelocity = 5;
+        int CurrentMaxVelocity = 2;
         int VelocityChange = 2;
         float CurrentVelocityChangePerStep = 1.0f;
         float Friction = 0.5f;
         bool CanFire = true;
+        int Shots = 1;
         float DefaultShotDelay = 0.5f;
         float ShotDelay;
         float LastShot = 0.0f;
@@ -30,7 +31,7 @@ namespace MiniJamAirPlanes
         bool Hit = false;
         float HitTime = 0.0f;
         float HitTimer = 0.5f;
-        public int PowerupsCollected = 0;
+        public int PowerupsCollected = 2;
         KeyboardState previousState;
         float Depth = 0.2f;
         float ShieldDepth = 0.19f;
@@ -55,6 +56,11 @@ namespace MiniJamAirPlanes
         public Rectangle GetCollosionRect
         {
             get { return CollosionRect; }
+        }
+
+        public int PlayerShield
+        {
+            get { return HasShield; }
         }
 
         public void Update(GameTime gameTime, List<BaseEnemy> enemies, List<PowerUpgrade> powerups, List<Bullet> bullets)
@@ -111,6 +117,7 @@ namespace MiniJamAirPlanes
                             if (HasShield > 0)
                             {
                                 HasShield--;
+
                             }
                             else
                             {
@@ -145,8 +152,8 @@ namespace MiniJamAirPlanes
                             {
                                 Hit = true;
                                 HitTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-                                theBullet.destroyed = true;
                             }
+                            theBullet.destroyed = true;
 
                         }
                     }
@@ -231,9 +238,19 @@ namespace MiniJamAirPlanes
             {
                 if (CanFire == true)
                 {
-                    Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 16), new Vector2(6, 0), true);
-                    CanFire = false;
-                    LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (Shots == 1)
+                    {
+                        Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 16), new Vector2(6, 0), true);
+                        CanFire = false;
+                        LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    }
+                    if (Shots == 2)
+                    {
+                        Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 8), new Vector2(6, 0), true);
+                        Game1.bManager.SpawnBullet(new Vector2(Location.X + Sprite.Width, Location.Y + 32), new Vector2(6, 0), true);
+                        CanFire = false;
+                        LastShot = (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    }
                 }
             }
 
@@ -258,7 +275,15 @@ namespace MiniJamAirPlanes
                             break;
                         
                         case 3:
-                            HasShield++;
+                            if (HasShield < 3)
+                            {
+                                HasShield++;
+                                PowerupsCollected = 0;
+                            }
+                            break;
+
+                        case 4:
+                            Shots++;
                             PowerupsCollected = 0;
                             break;
                     }

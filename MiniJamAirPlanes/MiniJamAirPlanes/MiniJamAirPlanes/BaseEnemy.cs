@@ -225,8 +225,12 @@ namespace MiniJamAirPlanes
 
         public void hit()
         {
+<<<<<<< HEAD
             destroyed = true;
             Game1.explosionList.Add(new Explosion(Location,new Vector2(30,30),Game1.explosionTex));
+=======
+
+>>>>>>> origin/master
             if (ID != 0)
             {
                 bool aBool = true;
@@ -245,9 +249,11 @@ namespace MiniJamAirPlanes
                 {
                     Trace.WriteLine("CREATE");
                     //create power up part
-                    Game1.addPowerUp(this.Location);
+                    if(!destroyed)
+                        Game1.addPowerUp(this.Location);
                 }
             }
+            destroyed = true;
         }
 
         public Vector2 getPosition()
