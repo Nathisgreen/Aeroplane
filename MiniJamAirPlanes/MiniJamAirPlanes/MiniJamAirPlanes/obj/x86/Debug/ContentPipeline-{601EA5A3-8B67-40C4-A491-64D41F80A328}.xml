@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
-      <Time>2012-08-25T14:53:35.5113761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9281838+01:00</Time>
     </Item>
     <Item>
       <Source>sprPlayer.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb</Output>
-      <Time>2012-08-25T14:53:35.5173761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
     <Item>
       <Source>sprEnemyBase.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb</Output>
-      <Time>2012-08-25T14:53:35.5163761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
     <Item>
       <Source>Bullet.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\Bullet.xnb</Output>
-      <Time>2012-08-25T14:53:35.5113761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9281838+01:00</Time>
     </Item>
     <Item>
       <Source>bgWaterFront.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterFront.xnb</Output>
-      <Time>2012-08-25T16:38:33.3533761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9281838+01:00</Time>
     </Item>
     <Item>
       <Source>bgWaterBack.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterBack.xnb</Output>
-      <Time>2012-08-25T16:38:33.3533761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9281838+01:00</Time>
     </Item>
     <Item>
       <Source>bgWaterMiddle.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb</Output>
-      <Time>2012-08-25T16:38:33.3543761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9281838+01:00</Time>
     </Item>
     <Item>
       <Source>sprBullet.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprBullet.xnb</Output>
-      <Time>2012-08-25T16:38:33.3603761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
     <Item>
       <Source>sprPowerUp.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPowerUp.xnb</Output>
-      <Time>2012-08-25T16:38:33.3613761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
     <Item>
       <Source>sprHudBox.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBox.xnb</Output>
-      <Time>2012-08-25T16:38:33.3603761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
     <Item>
       <Source>sprHudBoxSelected.png</Source>
@@ -98,7 +98,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb</Output>
-      <Time>2012-08-25T16:38:33.3613761+01:00</Time>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprSheild.png</Source>
+      <Name>sprSheild</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb</Output>
+      <Time>2012-08-26T12:15:12.9437838+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

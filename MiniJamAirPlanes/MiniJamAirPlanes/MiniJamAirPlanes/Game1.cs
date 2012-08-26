@@ -53,6 +53,14 @@ namespace MiniJamAirPlanes
         Random aRandom = new Random();
 
         int powerLevel = -1;
+
+        private static Vector2 VectorZero = new Vector2(0, 0);
+
+        public static Vector2 vectorZero
+        {
+            get { return VectorZero; }
+        }
+            
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
