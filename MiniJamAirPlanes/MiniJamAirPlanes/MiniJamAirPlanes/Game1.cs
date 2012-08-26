@@ -57,7 +57,7 @@ namespace MiniJamAirPlanes
         private static Vector2 VectorZero = new Vector2(0, 0);
         MouseState mouse;
         SpriteFont DebugFont;
-        SpriteFont Size8;
+        public static SpriteFont Size8;
 
         //HUD
         float HUDDepth = 1f;
@@ -259,7 +259,7 @@ namespace MiniJamAirPlanes
 
             bManager.Draw(spriteBatch);
 
-            DrawHud(thePlayer.PlayerShield);
+            DrawHud(thePlayer.PlayerShield, thePlayer.PlayerShots);
 
             spriteBatch.End();
 
@@ -365,7 +365,7 @@ namespace MiniJamAirPlanes
             powerList.Add(new PowerUpgrade(pos, powerTex));
         }
 
-        public void DrawHud(int playershield)
+        public void DrawHud(int playershield, int numshots)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -402,8 +402,19 @@ namespace MiniJamAirPlanes
                             spriteBatch.DrawString(Size8, "Shield", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
                         }
                         break;
-                    case 3: HUDDrawNow.X += 10; 
-                        spriteBatch.DrawString(Size8, "Double", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                    case 3:
+                        if (numshots < 3)
+                        {
+                            HUDDrawNow.X += 8;
+                            if (numshots == 1)
+                            {
+                                spriteBatch.DrawString(Size8, "Double", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                            }
+                            else
+                            {
+                                spriteBatch.DrawString(Size8, "Tripple", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                            }
+                        }
                         break;
                     case 4: HUDDrawNow.X += 20; 
                         spriteBatch.DrawString(Size8, "Meh!", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
