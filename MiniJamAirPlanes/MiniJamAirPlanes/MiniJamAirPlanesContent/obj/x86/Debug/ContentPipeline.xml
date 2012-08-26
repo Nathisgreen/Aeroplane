@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
-      <Time>2012-08-25T12:01:05.3987828+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb</Output>
+      <Time>2012-08-26T13:10:22.0251558+01:00</Time>
     </Item>
     <Item>
       <Source>sprPlayer.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb</Output>
-      <Time>2012-08-25T12:02:24.0318701+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
     </Item>
     <Item>
       <Source>sprEnemyBase.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb</Output>
-      <Time>2012-08-25T12:08:31.5792326+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
     </Item>
     <Item>
       <Source>Bullet.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\Bullet.xnb</Output>
-      <Time>2012-08-25T13:47:45.0933079+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\Bullet.xnb</Output>
+      <Time>2012-08-26T13:10:22.0251558+01:00</Time>
     </Item>
     <Item>
       <Source>bgWaterFront.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterFront.xnb</Output>
-      <Time>2012-08-25T15:12:42.6117817+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterFront.xnb</Output>
+      <Time>2012-08-26T13:10:22.0251558+01:00</Time>
     </Item>
     <Item>
       <Source>bgWaterBack.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterBack.xnb</Output>
-      <Time>2012-08-25T15:12:46.4649884+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterBack.xnb</Output>
+      <Time>2012-08-26T13:10:22.0251558+01:00</Time>
     </Item>
     <Item>
       <Source>bgWaterMiddle.png</Source>
@@ -61,17 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb</Output>
-      <Time>2012-08-25T15:38:26.7790786+01:00</Time>
-    </Item>
-    <Item>
-      <Source>sprPowerUp.png</Source>
-      <Name>sprPowerUp</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPowerUp.xnb</Output>
-      <Time>2012-08-25T16:20:22.8557192+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb</Output>
+      <Time>2012-08-26T13:10:22.0251558+01:00</Time>
     </Item>
     <Item>
       <Source>sprBullet.png</Source>
@@ -79,8 +70,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprBullet.xnb</Output>
-      <Time>2012-08-25T16:16:41.1967963+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprBullet.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sprPowerUp.png</Source>
+      <Name>sprPowerUp</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPowerUp.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
     </Item>
     <Item>
       <Source>sprHudBox.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBox.xnb</Output>
-      <Time>2012-08-25T16:31:50.3466441+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBox.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
     </Item>
     <Item>
       <Source>sprHudBoxSelected.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb</Output>
-      <Time>2012-08-25T16:32:51.6387985+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
     </Item>
     <Item>
       <Source>sprSheild.png</Source>
@@ -106,8 +106,26 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb</Output>
-      <Time>2012-08-25T16:56:20.3875245+01:00</Time>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb</Output>
+      <Time>2012-08-26T13:10:22.0407558+01:00</Time>
+    </Item>
+    <Item>
+      <Source>debugFont.spritefont</Source>
+      <Name>debugFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\debugFont.xnb</Output>
+      <Time>2012-08-26T13:11:33.897346+01:00</Time>
+    </Item>
+    <Item>
+      <Source>FontSize8.spritefont</Source>
+      <Name>FontSize8</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\FontSize8.xnb</Output>
+      <Time>2012-08-26T13:12:11.1302963+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -115,10 +133,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanesContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

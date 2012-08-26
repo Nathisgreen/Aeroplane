@@ -43,3 +43,23 @@ E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamA
 E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb
 C:\Users\Nath\Documents\Visual Studio 2010\Projects\MiniJamAeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb
 E:\Xnaprojects\Bitbuckettest\MiniJam1\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\GreenBlock.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPlayer.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprEnemyBase.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\Bullet.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterFront.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterBack.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\bgWaterMiddle.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprBullet.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprPowerUp.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBox.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprHudBoxSelected.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\sprSheild.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\MiniJamAirPlanes.exe
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\MiniJamAirPlanes.pdb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\MiniJamAirPlanes.exe
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\obj\x86\Debug\MiniJamAirPlanes.pdb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\debugFont.xnb
+C:\Users\Nath\Documents\Visual Studio 2010\Projects\Aeroplanes\MiniJamAirPlanes\MiniJamAirPlanes\MiniJamAirPlanes\bin\x86\Debug\Content\FontSize8.xnb

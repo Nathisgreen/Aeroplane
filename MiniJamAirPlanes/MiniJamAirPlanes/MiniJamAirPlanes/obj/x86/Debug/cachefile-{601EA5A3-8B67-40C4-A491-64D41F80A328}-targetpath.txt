@@ -10,3 +10,5 @@ Content\sprPowerUp.xnb
 Content\sprHudBox.xnb
 Content\sprHudBoxSelected.xnb
 Content\sprSheild.xnb
+Content\debugFont.xnb
+Content\FontSize8.xnb

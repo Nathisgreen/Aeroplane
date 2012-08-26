@@ -117,7 +117,7 @@ namespace MiniJamAirPlanes
             ColosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, sprite.Width, sprite.Height);
         }
 
-        public void Update(GameTime gameTime, Rectangle PlayerCollsionRect)
+        public virtual void Update(GameTime gameTime, Rectangle PlayerCollsionRect)
         {
             if (movementPattern == 1)
             {
@@ -211,9 +211,16 @@ namespace MiniJamAirPlanes
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Sprite, Location, Color.White);
+            if (ID == 0)
+            {
+                spriteBatch.Draw(Sprite, Location, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+            }
+            else
+            {
+                spriteBatch.Draw(Sprite, Location, null, Color.Red, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0.2f);
+            }
         }
 
         public void hit()
@@ -241,6 +248,16 @@ namespace MiniJamAirPlanes
                     Game1.addPowerUp(this.Location);
                 }
             }
+        }
+
+        public Vector2 getPosition()
+        {
+            return Location;
+        }
+
+        public Texture2D getSprite()
+        {
+            return Sprite;
         }
     }
 }
