@@ -135,10 +135,16 @@ namespace MiniJamAirPlanes
             {
                 if (Hit)
                 {
+
                 }
                 else
                 {
                     spriteBatch.Draw(Sprite, Location, Color.White);
+
+                    if (HasShield)
+                    {
+                        spriteBatch.Draw(Game1.sheildText, new Vector2(Location.X-14, Location.Y - 32), Color.White);
+                    }
                 }
             }
         }

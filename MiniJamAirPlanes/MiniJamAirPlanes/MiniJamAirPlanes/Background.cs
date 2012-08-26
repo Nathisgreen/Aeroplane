@@ -17,15 +17,17 @@ namespace MiniJamAirPlanes
         private float speed;
         private Boolean dir = false;
         private int change = 0;
-        public Background(Vector2 position, Texture2D tex, float aSpeed, bool dir)
+        private float layer;
+        public Background(Vector2 position, Texture2D tex, float aSpeed, bool dir, float depth)
         {
             sprite = tex;
             this.position = position;
             speed = aSpeed;
             this.dir = dir;
+            layer = depth;
         }
 
-        public void update(GameTime gameTime)
+        public void update(GameTime gameTimeh)
         {
             if (position.X + sprite.Width < 20)
             {
@@ -58,7 +60,7 @@ namespace MiniJamAirPlanes
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(sprite, position, Color.White);
+            spriteBatch.Draw(sprite, position, null ,Color.White, 0f, Vector2.Zero, 1f ,SpriteEffects.None, layer);
         }
     }
 }

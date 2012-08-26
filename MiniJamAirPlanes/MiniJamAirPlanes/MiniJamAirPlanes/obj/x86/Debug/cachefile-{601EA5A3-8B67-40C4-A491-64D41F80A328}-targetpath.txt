@@ -9,3 +9,4 @@ Content\sprPowerUp.xnb
 Content\sprBullet.xnb
 Content\sprHudBox.xnb
 Content\sprHudBoxSelected.xnb
+Content\sprSheild.xnb

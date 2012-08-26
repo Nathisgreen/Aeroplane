@@ -39,6 +39,7 @@ namespace MiniJamAirPlanes
         static public Texture2D bgWaterFrontTexture;
         static public Texture2D bgWaterMiddleTexture;
         static public Texture2D bgWaterBackTexture;
+        static public Texture2D sheildText;
 
         static public Texture2D powerTex;
 
@@ -94,7 +95,7 @@ namespace MiniJamAirPlanes
             hudBox = Content.Load<Texture2D>(@"sprHudBox");
             hudBoxSelected = Content.Load<Texture2D>(@"sprHudBoxSelected");
             powerTex = Content.Load<Texture2D>(@"sprPowerUp");
-
+            sheildText = Content.Load<Texture2D>(@"sprSheild");
             SetupGameObjects(PlayerTexture, BulletTexture);
         }
 
@@ -185,7 +186,7 @@ namespace MiniJamAirPlanes
             FramesThisPeroid++;
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
 
             foreach (Background aBg in bgArray)
             {
@@ -228,14 +229,14 @@ namespace MiniJamAirPlanes
             thePlayer = new Player(new Vector2(100, 320), playertexture);
             bManager = new BulletManager(bullettexture);
 
-            bgArray.Add(new Background(new Vector2(0, 150), bgWaterBackTexture, 1,true));
-            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterBackTexture, 1,true));
+            bgArray.Add(new Background(new Vector2(0, 150), bgWaterBackTexture, 1,true,1));
+            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterBackTexture, 1,true,1));
 
-            bgArray.Add(new Background(new Vector2(0, 150), bgWaterMiddleTexture, 2,false));
-            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterMiddleTexture, 2,false));
+            bgArray.Add(new Background(new Vector2(0, 150), bgWaterMiddleTexture, 2,false,0.95f));
+            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterMiddleTexture, 2,false,0.95f));
 
-            bgArray.Add(new Background(new Vector2(0, 150), bgWaterFrontTexture, 3,false));
-            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterFrontTexture, 3,false));
+            bgArray.Add(new Background(new Vector2(0, 150), bgWaterFrontTexture, 3,false,0.1f));
+            bgArray.Add(new Background(new Vector2(WindowWidth, 150), bgWaterFrontTexture, 3,false,0.1f));
 
 
             /*enemyArray.Add(new BaseEnemy(new Vector2(800, 320), EnemyTexture, 3));
@@ -258,12 +259,12 @@ namespace MiniJamAirPlanes
 
            if (time == 400)
             {
-                enemyArray.Add(new BaseEnemy(new Vector2(800, 420), EnemyTexture, 5));
-                enemyArray.Add(new BaseEnemy(new Vector2(900, 420), EnemyTexture, 5));
-                enemyArray.Add(new BaseEnemy(new Vector2(1000, 420), EnemyTexture,5));
-                enemyArray.Add(new BaseEnemy(new Vector2(1100, 420), EnemyTexture,5));
-                enemyArray.Add(new BaseEnemy(new Vector2(1200, 420), EnemyTexture,5));
-                enemyArray.Add(new BaseEnemy(new Vector2(1300, 420), EnemyTexture,5));
+                enemyArray.Add(new BaseEnemy(new Vector2(800, 420), EnemyTexture, 5,2));
+                enemyArray.Add(new BaseEnemy(new Vector2(900, 420), EnemyTexture, 5,2));
+                enemyArray.Add(new BaseEnemy(new Vector2(1000, 420), EnemyTexture,5,2));
+                enemyArray.Add(new BaseEnemy(new Vector2(1100, 420), EnemyTexture,5,2));
+                enemyArray.Add(new BaseEnemy(new Vector2(1200, 420), EnemyTexture,5,2));
+                enemyArray.Add(new BaseEnemy(new Vector2(1300, 420), EnemyTexture,5,2));
             }
 
            if (time == 800)
