@@ -22,11 +22,13 @@ namespace MiniJamAirPlanes
         public static int WindowWidth = 1240;
         public static int WindowHeight = 640;
 
-        int time = 0;
+        static int time = 0;
         int wave = 0;
         int FramesThisPeroid = 0;
         int FPS = 0;
         TimeSpan ElapsedTime = TimeSpan.Zero;
+
+        static int checkpoint = 0;
 
         Player thePlayer;
         Texture2D PlayerTexture;
@@ -91,7 +93,7 @@ namespace MiniJamAirPlanes
             // TODO: Add your initialization logic here
             graphics.PreferredBackBufferWidth = WindowWidth;
             graphics.PreferredBackBufferHeight = WindowHeight;
-            //graphics.ToggleFullScreen();
+            graphics.ToggleFullScreen();
             graphics.ApplyChanges();
             this.IsMouseVisible = true;
             base.Initialize();
@@ -332,6 +334,7 @@ namespace MiniJamAirPlanes
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 420), EnemyTexture, 6));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+100, 420), EnemyTexture, 6));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+200, 420), EnemyTexture, 6));
+               checkpoint = 1100;
            }
 
            if (time == 1300)
@@ -372,11 +375,12 @@ namespace MiniJamAirPlanes
 
            if (time == 2300)
            {
-               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth, 0), EnemyTexture, 7));
-               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 100, 0), EnemyTexture, 7));
-               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 200, 0), EnemyTexture1, 7));
-               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, 0), EnemyTexture, 7));
-               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 400, 0), EnemyTexture1, 7));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth, 0), EnemyTexture, 7,4));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 100, 0), EnemyTexture, 7,4));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 200, 0), EnemyTexture1, 7,4));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, 0), EnemyTexture, 7,4));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 400, 0), EnemyTexture1, 7,4));
+               checkpoint = 2300;
            }
 
            if (time == 2500)
@@ -398,11 +402,49 @@ namespace MiniJamAirPlanes
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 300, 428), EnemyTexture1, 9));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 400, 428), EnemyTexture1, 9));
            }
+
+           if (time == 2900)
+           {
+               float baseLocation = 300;
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth, baseLocation), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth+150, baseLocation-50), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 150, baseLocation +50), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, baseLocation + 100), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, baseLocation - 100), EnemyTexture, 1));
+           }
+
+           if (time == 3000)
+           {
+               float baseLocation = 100;
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth, baseLocation), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 150, baseLocation - 50), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 150, baseLocation + 50), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, baseLocation + 100), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, baseLocation - 100), EnemyTexture, 1));
+           }
+
+           if (time == 3100)
+           {
+               float baseLocation = 300;
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth, baseLocation), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 150, baseLocation - 50), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 150, baseLocation + 50), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, baseLocation + 100), EnemyTexture, 1));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, baseLocation - 100), EnemyTexture, 1));
+           }
         }
 
         public static void addPowerUp(Vector2 pos)
         {
             powerList.Add(new PowerUpgrade(pos, powerTex));
+        }
+
+        public static void CheckPoint()
+        {
+            enemyArray.Clear();
+            bManager.bullets.Clear();
+            time = checkpoint;
+            explosionList.Clear();
         }
 
         public void DrawHud(int playershield, int numshots)

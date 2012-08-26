@@ -37,11 +37,14 @@ namespace MiniJamAirPlanes
         float ShieldDepth = 0.19f;
         Vector2 ShieldLocation;
         Color ShieldColor = Color.Red;
-
+        Vector2 defaultLocation;
+        int deadTime = 0;
+        int deadtimer = 90;
 
         public Player( Vector2 location, Texture2D  sprite)
         {
             this.Location = location;
+            defaultLocation = location;
             this.Sprite = sprite;
             ShieldLocation = new Vector2(Location.X - 14, Location.Y - 32);
             CollosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, sprite.Width, sprite.Height);
@@ -181,6 +184,19 @@ namespace MiniJamAirPlanes
                 }
             }
 
+            if (Dead)
+            {
+                if (deadTime < deadtimer)
+                {
+                    deadTime++;
+                }
+                else
+                {
+                    
+                    resetPlayer();
+                }
+            }
+
             ShieldLocation.X = Location.X - 10;
             ShieldLocation.Y = Location.Y - 32;
             switch (HasShield)
@@ -243,6 +259,18 @@ namespace MiniJamAirPlanes
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 MovementVector.X += CurrentVelocityChangePerStep;
+            }
+
+            if (KeyPressed(Keys.PageUp))
+            {
+                if (PowerupsCollected < 5)
+                {
+                    PowerupsCollected++;
+                }
+                else
+                {
+                    PowerupsCollected = 0;
+                }
             }
 
             if (KeyPressed(Keys.Space))
@@ -324,6 +352,21 @@ namespace MiniJamAirPlanes
             {
                 return false;
             }
+        }
+
+        private void resetPlayer()
+        {
+            HasShield = 0;
+            PowerupsCollected = 0;
+            Shots = 1;
+            ShotDelay = DefaultShotDelay;
+            CurrentMaxVelocity = 2;
+            Dead = false;
+            Location = defaultLocation;
+            Game1.CheckPoint();
+            deadTime = 0;
+            Hit = false;
+
         }
     }
 }
