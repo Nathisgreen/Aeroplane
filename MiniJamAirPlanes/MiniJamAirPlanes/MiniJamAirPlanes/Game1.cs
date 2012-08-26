@@ -32,6 +32,7 @@ namespace MiniJamAirPlanes
         Texture2D PlayerTexture;
         Texture2D EnemyTexture;
         Texture2D BulletTexture;
+        Texture2D EnemyTexture1;
 
         Texture2D hudBox;
         Texture2D hudBoxSelected;
@@ -119,6 +120,7 @@ namespace MiniJamAirPlanes
             DebugFont = Content.Load<SpriteFont>(@"debugFont");
             Size8 = Content.Load<SpriteFont>(@"FontSize8");
             explosionTex = Content.Load<Texture2D>(@"sprExplosion");
+            EnemyTexture1 = Content.Load<Texture2D>(@"sprPlane1");
 
             SetupGameObjects(PlayerTexture, BulletTexture);
         }
@@ -316,17 +318,17 @@ namespace MiniJamAirPlanes
 
            if (time == 800)
            {
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 500), EnemyTexture, 0));
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+500, 35), EnemyTexture, 0));
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 120), EnemyTexture, 3));
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+100, 120), EnemyTexture, 3));
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+200, 120), EnemyTexture, 3));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 500), EnemyTexture1, 0,2));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+500, 35), EnemyTexture1, 0,2));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 120), EnemyTexture, 3,2));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+100, 120), EnemyTexture, 3,2));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+200, 120), EnemyTexture, 3,2));
            }
 
            if (time == 1100)
            {
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 400), EnemyTexture, 1));
-               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+500, 35), EnemyTexture, 1));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 400), EnemyTexture1, 1));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+500, 35), EnemyTexture1, 1));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 420), EnemyTexture, 6));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+100, 420), EnemyTexture, 6));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+200, 420), EnemyTexture, 6));
@@ -357,6 +359,44 @@ namespace MiniJamAirPlanes
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+200, 534), EnemyTexture, 4));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+300, 400), EnemyTexture, 5));
                enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth+400, 350), EnemyTexture, 6));
+           }
+
+           if (time == 2000)
+           {
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 428), EnemyTexture, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 100, 428), EnemyTexture1, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 200, 428), EnemyTexture1, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 300, 428), EnemyTexture1, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 400, 428), EnemyTexture1, 9));
+           }
+
+           if (time == 2300)
+           {
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth, 0), EnemyTexture, 7));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 100, 0), EnemyTexture, 7));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 200, 0), EnemyTexture1, 7));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 300, 0), EnemyTexture, 7));
+               enemyArray.Add(new SingleShotEnemy(new Vector2(WindowWidth + 400, 0), EnemyTexture1, 7));
+           }
+
+           if (time == 2500)
+           {
+               enemyArray.Add(new TripleShotEnemy(new Vector2(WindowWidth, 500), EnemyTexture1, 0));
+               enemyArray.Add(new TripleShotEnemy(new Vector2(WindowWidth + 500, 35), EnemyTexture1, 0));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 120), EnemyTexture, 3, 3));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 100, 120), EnemyTexture, 3, 3));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 200, 120), EnemyTexture, 3, 3));
+           }
+
+           if (time == 2600)
+           {
+               enemyArray.Add(new TripleShotEnemy(new Vector2(WindowWidth, 100), EnemyTexture1, 0));
+               enemyArray.Add(new TripleShotEnemy(new Vector2(WindowWidth + 500, 35), EnemyTexture1, 0));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth, 428), EnemyTexture, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 100, 428), EnemyTexture1, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 200, 428), EnemyTexture1, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 300, 428), EnemyTexture1, 9));
+               enemyArray.Add(new BaseEnemy(new Vector2(WindowWidth + 400, 428), EnemyTexture1, 9));
            }
         }
 

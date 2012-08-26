@@ -106,6 +106,25 @@ namespace MiniJamAirPlanes
                 patternSpeed = 3;
             }
 
+            if (movementPattern == 9)
+            {
+                wayPoints.Add(new Vector2(852, 428));
+                wayPoints.Add(new Vector2(852, 160));
+                wayPoints.Add(new Vector2(456, 166));
+                wayPoints.Add(new Vector2(469, 428));
+                usePattern = true;
+                patternSpeed = 3;
+            }
+
+            if (movementPattern == 10)
+            {
+                wayPoints.Add(new Vector2(864, 474));
+                wayPoints.Add(new Vector2(655, 54));
+                wayPoints.Add(new Vector2(270, 492));
+                usePattern = true;
+                patternSpeed = 3;
+            }
+
             if (movementPattern == 4)
             {
                 usePattern = true;
@@ -225,7 +244,7 @@ namespace MiniJamAirPlanes
 
         public void hit()
         {
-            Game1.explosionList.Add(new Explosion(Location,new Vector2(30,30),Game1.explosionTex));
+            Game1.explosionList.Add(new Explosion(new Vector2(getPosition().X - 30, getPosition().Y - 30),new Vector2(30,30),Game1.explosionTex));
 
             if (ID != 0)
             {
