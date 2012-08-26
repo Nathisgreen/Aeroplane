@@ -225,7 +225,6 @@ namespace MiniJamAirPlanes
 
         public void hit()
         {
-            destroyed = true;
 
             if (ID != 0)
             {
@@ -245,9 +244,11 @@ namespace MiniJamAirPlanes
                 {
                     Trace.WriteLine("CREATE");
                     //create power up part
-                    Game1.addPowerUp(this.Location);
+                    if(!destroyed)
+                        Game1.addPowerUp(this.Location);
                 }
             }
+            destroyed = true;
         }
 
         public Vector2 getPosition()

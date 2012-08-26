@@ -44,15 +44,18 @@ namespace MiniJamAirPlanes
 
             foreach( BaseEnemy enemy in enemies)
             {
-                if (CollosionRect.Intersects(enemy.ColosionRect))
+                if (!enemy.destroyed)
                 {
-                    if (FiredByPLayer)
+                    if (CollosionRect.Intersects(enemy.ColosionRect))
                     {
-                        enemy.hit();
-                        enemy.destroyed = true;
-                        destroyed = true;
-                    }
+                        if (FiredByPLayer)
+                        {
+                            enemy.hit();
+                            destroyed = true;
+                            enemy.destroyed = true;
+                        }
 
+                    }
                 }
             }
 

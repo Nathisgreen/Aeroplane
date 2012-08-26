@@ -232,7 +232,7 @@ namespace MiniJamAirPlanes
 
             bManager.Draw(spriteBatch);
 
-            DrawHud();
+            DrawHud(thePlayer.PlayerShield);
 
             spriteBatch.End();
 
@@ -338,7 +338,7 @@ namespace MiniJamAirPlanes
             powerList.Add(new PowerUpgrade(pos, powerTex));
         }
 
-        public void DrawHud()
+        public void DrawHud(int playershield)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -368,15 +368,20 @@ namespace MiniJamAirPlanes
                     case 1: HUDDrawNow.X -= 2;
                         spriteBatch.DrawString(Size8, "Shot Rate", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
                         break;
-                    case 2: HUDDrawNow.X += 7; 
-                        spriteBatch.DrawString(Size8, "Shield", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                    case 2:
+                        if (playershield < 3)
+                        {
+                            HUDDrawNow.X += 7;
+                            spriteBatch.DrawString(Size8, "Shield", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                        }
                         break;
-                    case 3: HUDDrawNow.X += 15; 
-                        spriteBatch.DrawString(Size8, "Laser", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
+                    case 3: HUDDrawNow.X += 10; 
+                        spriteBatch.DrawString(Size8, "Double", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
                         break;
                     case 4: HUDDrawNow.X += 20; 
                         spriteBatch.DrawString(Size8, "Meh!", HUDDrawNow, Color.Black, 0f, vectorZero, 1f, SpriteEffects.None, HUDDepth - 0.01f);
                         break;
+
                 }
             }
         }
