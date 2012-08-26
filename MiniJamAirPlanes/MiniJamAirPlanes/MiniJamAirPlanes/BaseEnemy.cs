@@ -57,51 +57,51 @@ namespace MiniJamAirPlanes
 
             if (movementPattern == 3)
             {
-                wayPoints.Add(new Vector2(420, 320));
-                wayPoints.Add(new Vector2(350, 250));
-                wayPoints.Add(new Vector2(420, 230));
-                wayPoints.Add(new Vector2(490, 320));
+                wayPoints.Add(new Vector2(300+420, 320));
+                wayPoints.Add(new Vector2(300+350, 250));
+                wayPoints.Add(new Vector2(300+420, 230));
+                wayPoints.Add(new Vector2(300+490, 320));
                 usePattern = true;
             }
 
             if (movementPattern == 5)
             {
-                wayPoints.Add(new Vector2(420, 320));
-                wayPoints.Add(new Vector2(490, 250));
-                wayPoints.Add(new Vector2(420, 280));
-                wayPoints.Add(new Vector2(350, 320));
+                wayPoints.Add(new Vector2(300+420, 320));
+                wayPoints.Add(new Vector2(300+490, 250));
+                wayPoints.Add(new Vector2(300+420, 280));
+                wayPoints.Add(new Vector2(300+350, 320));
                 usePattern = true;
             }
 
             if (movementPattern == 6)
             {
-                wayPoints.Add(new Vector2(420, 320));
-                wayPoints.Add(new Vector2(490, 250));
-                wayPoints.Add(new Vector2(420, 230));
-                wayPoints.Add(new Vector2(350, 320));
+                wayPoints.Add(new Vector2(300+420, 320));
+                wayPoints.Add(new Vector2(300+490, 250));
+                wayPoints.Add(new Vector2(300+420, 230));
+                wayPoints.Add(new Vector2(300+350, 320));
                 usePattern = true;
             }
 
             if (movementPattern == 7)
             {
-                wayPoints.Add(new Vector2(700, 0));
-                wayPoints.Add(new Vector2(600, 100));
-                wayPoints.Add(new Vector2(500, 200));
-                wayPoints.Add(new Vector2(400, 300));
-                wayPoints.Add(new Vector2(300, 400));
-                wayPoints.Add(new Vector2(200, 300));
+                wayPoints.Add(new Vector2(300+700, 0));
+                wayPoints.Add(new Vector2(300+600, 100));
+                wayPoints.Add(new Vector2(300+500, 200));
+                wayPoints.Add(new Vector2(300+400, 300));
+                wayPoints.Add(new Vector2(300+300, 400));
+                wayPoints.Add(new Vector2(300+200, 300));
                 usePattern = true;
                 patternSpeed = 3;
             }
 
             if (movementPattern == 8)
             {
-                wayPoints.Add(new Vector2(200, 500));
-                wayPoints.Add(new Vector2(300, 400));
-                wayPoints.Add(new Vector2(400, 300));
-                wayPoints.Add(new Vector2(500, 200));
-                wayPoints.Add(new Vector2(600, 100));
-                wayPoints.Add(new Vector2(700, 0));
+                wayPoints.Add(new Vector2(300+200, 500));
+                wayPoints.Add(new Vector2(300+300, 400));
+                wayPoints.Add(new Vector2(300+400, 300));
+                wayPoints.Add(new Vector2(300+500, 200));
+                wayPoints.Add(new Vector2(300+600, 100));
+                wayPoints.Add(new Vector2(300+700, 0));
                 usePattern = true;
                 patternSpeed = 3;
             }
@@ -110,8 +110,8 @@ namespace MiniJamAirPlanes
             {
                 usePattern = true;
                 this.Velocity.X = -3;
-                wayPoints.Add(new Vector2(320, 220));
-                wayPoints.Add(new Vector2(520, 420));
+                wayPoints.Add(new Vector2(300+320, 220));
+                wayPoints.Add(new Vector2(300+520, 420));
             }
 
             ColosionRect = new Rectangle((int)this.Location.X, (int)this.Location.Y, sprite.Width, sprite.Height);
@@ -258,6 +258,11 @@ namespace MiniJamAirPlanes
         public Texture2D getSprite()
         {
             return Sprite;
+        }
+
+        public Vector2 getVelocity()
+        {
+            return Velocity;
         }
     }
 }

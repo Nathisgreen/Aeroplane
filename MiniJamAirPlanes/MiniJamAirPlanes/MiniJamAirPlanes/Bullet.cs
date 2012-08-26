@@ -46,9 +46,12 @@ namespace MiniJamAirPlanes
             {
                 if (CollosionRect.Intersects(enemy.ColosionRect))
                 {
-                    enemy.hit();
-                    enemy.destroyed = true;
-                    destroyed = true;
+                    if (FiredByPLayer)
+                    {
+                        enemy.hit();
+                        enemy.destroyed = true;
+                        destroyed = true;
+                    }
 
                 }
             }

@@ -8,13 +8,13 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MiniJamAirPlanes
 {
-    class SingleShotEnemy : BaseEnemy
+    class DownShotEnemy : BaseEnemy
     {
         private float shootTime = 0;
         private float ShootTimer;
         static private Random aRandom = new Random();
 
-        public SingleShotEnemy(Vector2 location, Texture2D sprite, int movementPattern, int ID = 0)
+        public DownShotEnemy(Vector2 location, Texture2D sprite, int movementPattern, int ID = 0)
             : base(location, sprite, movementPattern, ID)
         {
             ShootTimer = aRandom.Next(60) + 60;
@@ -30,9 +30,12 @@ namespace MiniJamAirPlanes
             }
             else
             {
-                ShootTimer = Game1.aRandom.Next(60) + 100;
+                ShootTimer = aRandom.Next(60) + 100;
                 shootTime = 0;
-                Game1.bManager.SpawnBullet(new Vector2(this.getPosition().X + 4, this.getPosition().Y + 12), new Vector2(-12, 0), false);
+                if (getVelocity().X < 0)
+                {
+                    Game1.bManager.SpawnBullet(new Vector2(this.getPosition().X + 4, this.getPosition().Y + 42), new Vector2(getVelocity().X, 5), false);
+                }
             }
         }
 
