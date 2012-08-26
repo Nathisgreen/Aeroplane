@@ -165,6 +165,10 @@ namespace MiniJamAirPlanes
                     }
                 }
             }
+
+            if (movementPattern == 100)
+            {
+            }
             
             if (usePattern)
             {
@@ -223,7 +227,8 @@ namespace MiniJamAirPlanes
                 }
             }
 
-            Location += Velocity;
+            if( movementPattern != 100 )
+                Location += Velocity;
 
             ColosionRect.X = (int)Location.X;
             ColosionRect.Y = (int)Location.Y;

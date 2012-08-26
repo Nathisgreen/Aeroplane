@@ -37,9 +37,12 @@ namespace MiniJamAirPlanes
         float ShieldDepth = 0.19f;
         Vector2 ShieldLocation;
         Color ShieldColor = Color.Red;
+<<<<<<< HEAD
         Vector2 defaultLocation;
         int deadTime = 0;
         int deadtimer = 90;
+=======
+>>>>>>> origin/master
 
         public Player( Vector2 location, Texture2D  sprite)
         {
@@ -234,7 +237,7 @@ namespace MiniJamAirPlanes
             }
             else
             {
-                spriteBatch.DrawString(Game1.Size8, "N00B!!!!!", new Vector2(140, 200), Color.Red, 0f, Game1.vectorZero, 15.0f, SpriteEffects.None, 0);
+                    spriteBatch.DrawString(Game1.Size8, "N00B!!!!!", new Vector2(140, 200), Color.Red, 0f, Game1.vectorZero, 15.0f, SpriteEffects.None, 0);
             }
         }
 

@@ -50,9 +50,20 @@ namespace MiniJamAirPlanes
                     {
                         if (FiredByPLayer)
                         {
-                            enemy.hit();
                             destroyed = true;
-                            enemy.destroyed = true;
+                            Trace.Write(enemy.GetType().ToString());
+                            if (enemy.GetType() == typeof(Boss) )
+                            {
+                                Boss tempBoss = (Boss)enemy;
+                                tempBoss.HP--;
+                                if (tempBoss.HP <= 0)
+                                    tempBoss.destroyed = true;
+                            }
+                            else
+                            {
+                                enemy.hit();
+                                enemy.destroyed = true;
+                            }
                         }
 
                     }
