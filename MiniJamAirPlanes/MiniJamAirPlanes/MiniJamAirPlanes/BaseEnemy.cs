@@ -225,12 +225,8 @@ namespace MiniJamAirPlanes
 
         public void hit()
         {
-<<<<<<< HEAD
-            destroyed = true;
             Game1.explosionList.Add(new Explosion(Location,new Vector2(30,30),Game1.explosionTex));
-=======
 
->>>>>>> origin/master
             if (ID != 0)
             {
                 bool aBool = true;
